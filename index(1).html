@@ -1,0 +1,3024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary</title>
+    <link rel="icon" href="your-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cinzel+Decorative:wght@400;700&family=Comic+Neue:wght@300;400;700&family=Cutive+Mono&family=Indie+Flower&family=Pacifico&family=Permanent+Marker&family=Special+Elite&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #fdf5f5;
+            --secondary-bg: #ffebeb;
+            --text-color: #4a4a4a;
+            --header-color: #6a052e;
+            --input-bg: #ffffff;
+            --input-border: #ffd1dc;
+            --button-bg: #d14777;
+            --button-hover-bg: #e26e95;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+            --main-font: 'Arial', sans-serif;
+            --content-font: 'Arial', sans-serif;
+            --highlight-color: #ffc200;
+            --music-player-bg: #333;
+            --music-progress-bg: #666;
+            --music-progress-fill: #ffd0d0;
+            --music-text-color: white;
+            --music-control-hover: #e08282;
+            --drawer-bg: #f8f0f0;
+            --drawer-text: #4a4a4a;
+            --drawer-item-bg: #fff5f5;
+            --drawer-item-hover: #ffecec;
+            --panic-button-bg: #dc3545;
+            --panic-button-color: white;
+            --tag-bg: #f0f0f0;
+            --tag-text: #555;
+            --editor-border: var(--input-border);
+            --editor-background: var(--input-bg);
+            --editor-text: var(--text-color);
+        }
+
+        body.theme-dark {
+            --primary-bg: #2c2c2c;
+            --secondary-bg: #3b3b3b;
+            --text-color: #e0e0e0;
+            --header-color: #f0f0f0;
+            --input-bg: #4a4a4a;
+            --input-border: #666;
+            --button-bg: #6a052e;
+            --button-hover-bg: #8d0a40;
+            --shadow-color: rgba(0, 0, 0, 0.25);
+            --highlight-color: #b388ff;
+            --music-player-bg: #222;
+            --music-progress-bg: #555;
+            --music-progress-fill: #8d0a40;
+            --music-text-color: #fff;
+            --music-control-hover: #a35656;
+            --drawer-bg: #222;
+            --drawer-text: #eee;
+            --drawer-item-bg: #333;
+            --drawer-item-hover: #555;
+            --tag-bg: #4a4a4a;
+            --tag-text: #e0e0e0;
+            --editor-border: #666;
+            --editor-background: #4a4a4a;
+            --editor-text: #e0e0e0;
+        }
+
+        body.theme-vampire {
+            --primary-bg: #1a0000;
+            --secondary-bg: #3a0000;
+            --text-color: #f7e1e1;
+            --header-color: #ff6347;
+            --input-bg: #2a0000;
+            --input-border: #6a0000;
+            --button-bg: #8b0000;
+            --button-hover-bg: #c00000;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --main-font: 'Cinzel Decorative', serif;
+            --content-font: 'Cinzel Decorative', serif;
+            --highlight-color: #ff3333;
+            --music-player-bg: #2a0000;
+            --music-progress-bg: #5a0000;
+            --music-progress-fill: #b00000;
+            --music-text-color: #f7e1e1;
+            --music-control-hover: #6a0000;
+            --drawer-bg: #1a0000;
+            --drawer-text: #f7e1e1;
+            --drawer-item-bg: #2a0000;
+            --drawer-item-hover: #4a0000;
+            --tag-bg: #8b0000;
+            --tag-text: #f7e1e1;
+            --editor-border: #6a0000;
+            --editor-background: #2a0000;
+            --editor-text: #f7e1e1;
+            cursor: url('images/blood-drop.png'), auto;
+        }
+
+        body.theme-unicorn {
+            --primary-bg: #fcf4f7;
+            --secondary-bg: #e6f7ff;
+            --text-color: #6a052e;
+            --header-color: #880e4f;
+            --input-bg: #ffe0f0;
+            --input-border: #ffb3d9;
+            --button-bg: #ff80ab;
+            --button-hover-bg: #ffade5;
+            --shadow-color: rgba(255, 192, 203, 0.2);
+            --highlight-color: #d1c4e9;
+            --main-font: 'Pacifico', cursive;
+            --content-font: 'Caveat', cursive;
+            --music-player-bg: #f0f4c3;
+            --music-progress-bg: #e1bee7;
+            --music-progress-fill: #a7ffeb;
+            --music-text-color: #6a1b9a;
+            --music-control-hover: #d7ccc8;
+            --drawer-bg: #fffde7;
+            --drawer-text: #4a148c;
+            --drawer-item-bg: #f3e5f5;
+            --drawer-item-hover: #e1bee7;
+            --tag-bg: #ffafe5;
+            --tag-text: #880e4f;
+            --editor-border: #ffb3d9;
+            --editor-background: #ffe0f0;
+            --editor-text: #880e4f;
+            cursor: url('images/sparkle.png'), auto;
+        }
+
+        body.theme-darkacademia {
+            --primary-bg: #2e2622;
+            --secondary-bg: #3d342f;
+            --text-color: #e0d0b8;
+            --header-color: #f8ede0;
+            --input-bg: #4a403b;
+            --input-border: #5a504a;
+            --button-bg: #6a5e55;
+            --button-hover-bg: #7a6e65;
+            --shadow-color: rgba(0, 0, 0, 0.35);
+            --main-font: 'Cutive Mono', monospace;
+            --content-font: 'Special Elite', monospace;
+            --highlight-color: #a1887f;
+            --music-player-bg: #3e3631;
+            --music-progress-bg: #5a504a;
+            --music-progress-fill: #a1887f;
+            --music-text-color: #e0d0b8;
+            --music-control-hover: #6a5e55;
+            --drawer-bg: #2e2622;
+            --drawer-text: #e0d0b8;
+            --drawer-item-bg: #3e3631;
+            --drawer-item-hover: #5a504a;
+            --tag-bg: #6a5e55;
+            --tag-text: #e0d0b8;
+            --editor-border: #5a504a;
+            --editor-background: #3e3631;
+            --editor-text: #e0d0b8;
+            background-image: url('images/old-paper-texture.png');
+            background-size: cover;
+            background-blend-mode: multiply;
+            background-attachment: fixed;
+        }
+
+        body.theme-neon {
+            --primary-bg: #0d0d0d;
+            --secondary-bg: #1a1a1a;
+            --text-color: #00ff00;
+            --header-color: #00ffff;
+            --input-bg: #2a2a2a;
+            --input-border: #00ff00;
+            --button-bg: #ff00ff;
+            --button-hover-bg: #ff33ff;
+            --shadow-color: rgba(0, 255, 0, 0.4);
+            --border-radius: 5px;
+            --main-font: 'Permanent Marker', cursive;
+            --content-font: 'Comic Neue', cursive;
+            --highlight-color: #ff00ff;
+            --music-player-bg: #2a2a2a;
+            --music-progress-bg: #00ff00;
+            --music-progress-fill: #ff00ff;
+            --music-text-color: #00ffff;
+            --music-control-hover: #5a5a5a;
+            --drawer-bg: #0d0d0d;
+            --drawer-text: #00ff00;
+            --drawer-item-bg: #1a1a1a;
+            --drawer-item-hover: #3a3a3a;
+            --tag-bg: #ff00ff;
+            --tag-text: black;
+            --editor-border: #00ff00;
+            --editor-background: #2a2a2a;
+            --editor-text: #00ff00;
+            text-shadow: 0 0 3px var(--text-color);
+        }
+
+        body.theme-neon .container {
+            border: 2px solid var(--input-border);
+            box-shadow: 0 0 15px var(--input-border);
+        }
+
+        body.theme-neon h1,
+        body.theme-neon h3 {
+            text-shadow: 0 0 8px var(--header-color);
+        }
+
+        body.theme-neon button {
+            box-shadow: 0 0 10px var(--button-bg);
+            color: black;
+        }
+
+        body.theme-neon button:hover {
+            box-shadow: 0 0 15px var(--button-hover-bg);
+        }
+
+        body.theme-neon textarea,
+        body.theme-neon input {
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+
+        body {
+            font-family: var(--main-font);
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease, font-family 0.3s ease;
+            position: relative;
+            overflow-x: hidden;
+            color: var(--text-color);
+            flex-direction: column;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-sizing: border-box;
+            max-width: 800px;
+            width: 90%;
+            background: var(--secondary-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 6px 12px var(--shadow-color);
+            text-align: center;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+            position: relative;
+            z-index: 1;
+            margin: 20px auto;
+        }
+
+        #auth-container {
+            min-height: 400px;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .error-page,
+        .music-player,
+        .drawer,
+        .drawer2,
+        .flappy-bird {
+            display: flex;
+        }
+
+        #open-music-btn,
+        #open-sidebar-btn,
+        .panic-button {
+            display: flex;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 25px;
+            background-color: rgb(235, 144, 164);
+            opacity: 0.65;
+            clip-path: polygon(53% 37%, 58% 31%, 63% 28%, 70% 28%, 74% 30%, 78% 34%, 79% 39%, 80% 44%, 80% 50%, 76% 57%, 71% 62%, 67% 67%, 61% 71%, 58% 76%, 53% 79%, 48% 77%, 44% 73%, 36% 65%, 29% 56%, 25% 48%, 25% 42%, 28% 36%, 30% 30%, 38% 30%, 44% 33%, 46% 35%);
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.8);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--button-bg);
+            border-radius: 10px;
+            border: 3px solid transparent;
+            background-clip: content-box;
+        }
+
+        body.theme-unicorn ::-webkit-scrollbar-track {
+            background: linear-gradient(to bottom, #ffcccc, #ffe6cc, #ffffcc, #e6ffcc, #ccffff, #cce6ff, #ccccff, #ffccff);
+        }
+
+        body.theme-unicorn ::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        body.theme-darkacademia ::-webkit-scrollbar-thumb {
+            background-color: #5a504a;
+            border-color: #3e3631;
+        }
+
+        body.theme-neon ::-webkit-scrollbar-thumb {
+            background-color: #00ff00;
+            border-color: #1a1a1a;
+        }
+
+        h1,
+        h3 {
+            margin-bottom: 20px;
+            color: var(--header-color);
+            transition: color 0.3s ease, font-family 0.3s ease;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 180px;
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid var(--input-border);
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            resize: vertical;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: var(--button-hover-bg);
+            box-shadow: 0 0 0 3px rgba(var(--button-hover-bg), 0.2);
+        }
+
+        input:not(.volume-slider):not(.range),
+        button,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:not(.volume-slider):not(.range),
+        select {
+            border: 1px solid var(--input-border);
+            background-color: var(--input-bg);
+            color: var(--text-color);
+        }
+
+        input:not(.volume-slider):not(.range):focus,
+        select:focus {
+            border-color: var(--button-hover-bg);
+            box-shadow: 0 0 0 3px rgba(var(--button-hover-bg), 0.2);
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: var(--button-hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px var(--shadow-color);
+        }
+
+        .theme-selector {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--input-border);
+        }
+
+        .theme-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            padding: 0;
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 5px var(--shadow-color);
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .theme-btn.active {
+            border-color: var(--text-color);
+            box-shadow: 0 0 0 3px var(--button-hover-bg), 0 0 0 5px var(--text-color);
+            transform: scale(1.05);
+        }
+
+        .theme-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--button-bg);
+            border-radius: 50%;
+            border: 2px solid var(--text-color);
+        }
+
+        .default-theme {
+            background-color: #f8dcdc;
+        }
+
+        .dark-theme {
+            background-color: #444;
+        }
+
+        .vampire-theme-btn {
+            background-color: #8b0000;
+        }
+
+        .unicorn-theme-btn {
+            background-color: #ffafe5;
+        }
+
+        .darkacademia-theme-btn {
+            background-color: #6a5e55;
+            background-image: url('img.jpg');
+            background-size: cover;
+        }
+
+        .neon-theme-btn {
+            background-color: #00ff00;
+        }
+
+        .valentine-theme-btn {
+            background-color: #ff69b4;
+        }
+
+        .drawer2 {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background: var(--drawer-bg, #fff);
+            color: var(--drawer-text, #333);
+            padding: 20px;
+            transition: left 0.3s ease-out;
+            z-index: 1002;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            box-sizing: border-box;
+            border-top-right-radius: var(--border-radius, 12px);
+            border-bottom-right-radius: var(--border-radius, 12px);
+            display: flex;
+        }
+
+        .drawer2.open {
+            left: 0;
+        }
+
+        .diary-top-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--input-border);
+        }
+
+        .diary-selection-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .diary-selection-row select {
+            flex-grow: 1;
+            min-width: 150px;
+        }
+
+        .diary-selection-row button {
+            width: auto;
+            min-width: 100px;
+            margin: 0;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .rename-input-group {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .rename-input-group input {
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .rename-input-group button {
+            width: auto;
+            min-width: 80px;
+            margin: 0;
+            padding: 10px 15px;
+            font-size: 0.95em;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .search-container input {
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .search-container button {
+            width: auto;
+            min-width: 100px;
+            margin: 0;
+            padding: 10px 15px;
+            font-size: 0.95em;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            flex: 1 1 calc(50% - 5px);
+            min-width: 140px;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .button-group button {
+                flex: 1 1 100%;
+            }
+        }
+
+        .mood-tracker {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--input-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--input-border);
+            text-align: center;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .mood-options {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .mood-option {
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            font-size: 2em;
+            line-height: 1.2;
+            color: var(--text-color);
+            background-color: var(--drawer-item-bg);
+            flex: 1 1 auto;
+            min-width: 60px;
+            max-width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--input-border);
+        }
+
+        .mood-option span {
+            font-size: 0.4em;
+            margin-top: 5px;
+            font-weight: normal;
+            color: var(--text-color);
+        }
+
+        .mood-option:hover {
+            background-color: var(--drawer-item-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .mood-option.selected {
+            background-color: var(--button-bg);
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            border-color: var(--button-bg);
+        }
+
+        .mood-option.selected span {
+            color: white;
+        }
+
+        .rich-text-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+            justify-content: center;
+            background-color: var(--input-bg);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--input-border);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .rich-text-toolbar select,
+        .rich-text-toolbar button {
+            width: auto;
+            padding: 8px 12px;
+            margin: 0;
+            font-size: 14px;
+            min-width: unset;
+            border-radius: 8px;
+            background-color: var(--button-bg);
+            color: white;
+        }
+
+        .rich-text-toolbar button:hover {
+            background-color: var(--button-hover-bg);
+        }
+
+        .rich-text-toolbar select {
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            border: 1px solid var(--input-border);
+        }
+
+        .rich-text-toolbar select:hover {
+            background-color: var(--drawer-item-hover);
+        }
+
+        .emoji-keyboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            background-color: var(--input-bg);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--input-border);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .emoji-btn {
+            font-size: 24px;
+            background: var(--drawer-item-bg);
+            border-radius: 8px;
+            border: 1px solid var(--input-border);
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+            width: auto;
+            min-width: unset;
+            box-shadow: none;
+            color: var(--text-color);
+        }
+
+        .emoji-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--drawer-item-hover);
+            border-color: var(--button-hover-bg);
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: var(--input-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--input-border);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .new-tag-input {
+            flex-grow: 1;
+            margin: 0;
+            min-width: 100px;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .add-tag-btn {
+            width: auto;
+            padding: 5px 15px;
+            font-size: 1.2em;
+            margin: 0;
+            min-width: unset;
+            line-height: 1;
+            border-radius: 8px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-right: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .tag-remove {
+            background: none;
+            border: none;
+            color: var(--tag-text);
+            font-size: 0.8em;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+            opacity: 0.7;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .tag-remove:hover {
+            transform: scale(1.2);
+            opacity: 1;
+            color: var(--button-hover-bg);
+        }
+
+        #diary-editor {
+            width: 100%;
+            min-height: 350px;
+            padding: 15px;
+            border: 1px solid var(--editor-border);
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            line-height: 1.6;
+            background-color: var(--editor-background);
+            color: var(--editor-text);
+            overflow-y: auto;
+            text-align: left;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            cursor: text;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        #diary-editor:empty:not(:focus):before {
+            content: attr(data-placeholder);
+            color: #aaa;
+            font-style: italic;
+            cursor: text;
+        }
+
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        #image-attachments-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--input-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--input-border);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .image-attachment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid var(--input-border);
+            border-radius: var(--border-radius);
+            padding: 10px;
+            background-color: var(--secondary-bg);
+            position: relative;
+            box-sizing: border-box;
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        .image-preview-container {
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .image-preview-container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .image-attachment input[type="text"] {
+            margin-top: 10px;
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .delete-image-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--panic-button-bg);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s, transform 0.2s;
+            margin: 0;
+        }
+
+        .delete-image-btn:hover {
+            background-color: #a71d2a;
+            transform: scale(1.1);
+        }
+
+        .broken-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: var(--input-bg);
+            border: 1px dashed var(--input-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            font-style: italic;
+            border-radius: 8px;
+            gap: 5px;
+            font-size: 0.9em;
+        }
+
+        .broken-image-placeholder::before {
+            content: "🖼️";
+            font-size: 2em;
+        }
+
+        .error-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a1a1a;
+            color: #ff0000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+            z-index: 9999;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .error-page h1 {
+            font-size: 8em;
+            margin-bottom: 20px;
+            animation: glitch 1s infinite;
+        }
+
+        .error-page p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #eee;
+        }
+
+        .error-page button {
+            background-color: #ff0000;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            width: auto;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 #f0f, -0.05em -0.025em 0 #0ff;
+            }
+
+            14% {
+                text-shadow: 0.05em 0 0 #f0f, -0.05em -0.025em 0 #0ff;
+            }
+
+            15% {
+                text-shadow: -0.05em -0.025em 0 #f0f, 0.025em 0.025em 0 #0ff;
+            }
+
+            49% {
+                text-shadow: -0.05em -0.025em 0 #f0f, 0.025em 0.025em 0 #0ff;
+            }
+
+            50% {
+                text-shadow: 0 0.05em 0 #f0f, 0.05em 0 0 #0ff;
+            }
+
+            99% {
+                text-shadow: 0 0.05em 0 #f0f, 0.05em 0 0 #0ff;
+            }
+
+            100% {
+                text-shadow: -0.05em 0 0 #f0f, -0.025em -0.025em 0 #0ff;
+            }
+        }
+
+        .panic-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--panic-button-bg);
+            color: var(--panic-button-color);
+            font-size: 2em;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .panic-button:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .music-player {
+            position: fixed;
+            bottom: 0;
+            right: -350px;
+            width: 320px;
+            max-height: 100vh;
+            background: var(--music-player-bg);
+            color: var(--music-text-color);
+            padding: 20px;
+            transition: right 0.3s ease-out;
+            z-index: 1001;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            box-sizing: border-box;
+            border-top-left-radius: var(--border-radius);
+        }
+
+        .music-player.open {
+            right: 0;
+        }
+
+        .music-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--music-text-color);
+        }
+
+        .close-music {
+            background: none;
+            border: none;
+            color: var(--music-text-color);
+            font-size: 2.5em;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: color 0.2s;
+            width: auto;
+            margin: 0;
+        }
+
+        .close-music:hover {
+            color: var(--button-hover-bg);
+        }
+
+        .playlist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            scrollbar-width: thin;
+            scrollbar-color: var(--button-bg) var(--music-player-bg);
+        }
+
+        .playlist li {
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            background: var(--drawer-item-bg);
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--drawer-text);
+        }
+
+        .playlist li:hover {
+            background: var(--drawer-item-hover);
+        }
+
+        .playlist li.active-song {
+            background-color: var(--music-progress-fill);
+            color: var(--secondary-bg);
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: var(--music-progress-bg);
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--music-progress-fill);
+            border-radius: 5px;
+            width: 0%;
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: var(--music-text-color);
+            margin-bottom: 10px;
+        }
+
+        .player-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: var(--music-text-color);
+            font-size: 1.8em;
+            cursor: pointer;
+            padding: 5px;
+            transition: color 0.2s;
+            width: auto;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .control-btn:hover {
+            color: var(--button-hover-bg);
+            transform: scale(1.1);
+            box-shadow: none;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 5px;
+            -webkit-appearance: none;
+            background: var(--music-progress-bg);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            background: var(--music-progress-fill);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .loop-btn.active {
+            color: var(--music-progress-fill);
+        }
+
+        #open-music-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 15px;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        #open-music-btn:hover {
+            background-color: var(--button-hover-bg);
+            transform: scale(1.05);
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background: var(--drawer-bg);
+            color: var(--drawer-text);
+            padding: 20px;
+            transition: left 0.3s ease-out;
+            z-index: 1002;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            box-sizing: border-box;
+            border-top-right-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            scrollbar-width: thin;
+            scrollbar-color: var(--button-bg) var(--drawer-bg);
+        }
+
+        .drawer.open {
+            left: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--input-border);
+        }
+
+        .drawer-header h3 {
+            margin: 0;
+            color: var(--drawer-text);
+        }
+
+        .drawer .close-btn {
+            background: none;
+            border: none;
+            color: var(--drawer-text);
+            font-size: 2.5em;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: color 0.2s;
+            width: auto;
+            margin: 0;
+        }
+
+        .drawer .close-btn:hover {
+            color: var(--button-hover-bg);
+        }
+
+        .diary-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--input-border);
+        }
+
+        .diary-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: calc(100% - 250px);
+        }
+
+        .diary-list li {
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            background: var(--drawer-item-bg);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            text-align: left;
+            color: var(--drawer-text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .diary-list li:hover {
+            background: var(--drawer-item-hover);
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        .diary-list li.active-diary {
+            background-color: var(--button-bg);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-diary-list {
+            margin-bottom: 15px;
+        }
+
+        .search-diary-list input {
+            margin: 0;
+        }
+
+        #open-sidebar-btn {
+            position: fixed;
+            top: 20px;
+            left: 90px;
+            padding: 15px;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        #open-sidebar-btn:hover {
+            background-color: var(--button-hover-bg);
+            transform: scale(1.05);
+        }
+
+        .flappy-bird {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: #222;
+            border: 2px solid var(--neon-glow-color, #00ff00);
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+            z-index: 2000;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        .flappy-bird .close-game {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            width: auto;
+            margin: 0;
+            z-index: 2001;
+        }
+
+        .flappy-bird .close-game:hover {
+            color: var(--button-hover-bg);
+            transform: scale(1.1);
+        }
+
+        .score-display {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--header-color);
+        }
+
+        .flappy-container {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(to bottom, #7ed6df, #00b894);
+            border: 1px solid #555;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bird {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            border-radius: 50%;
+            top: 50%;
+            left: 20%;
+            transition: background-color 0.1s linear;
+        }
+
+        .bird.flapping {
+            background-color: orange;
+        }
+
+        .pipe {
+            position: absolute;
+            width: 50px;
+            background-color: green;
+            border: 2px solid darkgreen;
+        }
+
+        .pipe.bottom {
+            bottom: 0;
+        }
+
+        .pipe.top {
+            top: 0;
+        }
+
+        .flappy-bird .control-btn {
+            margin-top: 15px;
+            font-size: 1.2em;
+            width: 80%;
+        }
+
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                margin: 1cm !important;
+                display: block !important;
+                font-family: 'Georgia', serif !important;
+                min-height: unset !important;
+            }
+
+            .background-animation,
+            .theme-selector,
+            .diary-top-controls,
+            .search-container,
+            .prompt-container,
+            .mood-tracker,
+            .rich-text-toolbar,
+            .emoji-keyboard,
+            .tag-container .new-tag-input,
+            .tag-container .add-tag-btn,
+            .button-group button:not(.print-button),
+            #image-attachments-container .delete-image-btn,
+            #image-attachments-container input,
+            .panic-button,
+            .music-player,
+            .flappy-bird,
+            .auth-container,
+            .error-page,
+            #open-music-btn,
+            #open-sidebar-btn,
+            .drawer,
+            .rename-input-group {
+                display: none !important;
+            }
+
+            .container {
+                margin: 0 !important;
+                max-width: none !important;
+                width: auto !important;
+                box-shadow: none !important;
+                background-color: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                gap: 0 !important;
+            }
+
+            h1,
+            h3 {
+                color: #333 !important;
+                font-family: 'Times New Roman', serif !important;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                page-break-after: avoid;
+            }
+
+            #diary-editor {
+                border: none !important;
+                background-color: transparent !important;
+                color: #000000 !important;
+                min-height: unset !important;
+                overflow: visible !important;
+                resize: none !important;
+                padding: 0 !important;
+                font-size: 12pt !important;
+                line-height: 1.5 !important;
+                white-space: pre-wrap;
+            }
+
+            .highlight {
+                background-color: yellow !important;
+                color: black !important;
+            }
+
+            .image-attachment {
+                border: none !important;
+                padding: 0 !important;
+                background-color: transparent !important;
+                margin: 15px auto !important;
+                page-break-inside: avoid;
+            }
+
+            .image-preview-container {
+                max-width: 100% !important;
+                height: auto !important;
+                background-color: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            .image-preview-container img {
+                max-width: 100% !important;
+                height: auto !important;
+                display: block !important;
+                border: 1px solid #ccc !important;
+                box-shadow: none !important;
+            }
+
+            .tag-container {
+                background-color: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            .tag {
+                background-color: #e0e0e0 !important;
+                color: #333 !important;
+                border: 1px solid #ccc !important;
+                page-break-inside: avoid;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            animation: fall 3s ease-out forwards;
+            opacity: 0;
+            z-index: 9999;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotateZ(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotateZ(720deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti.red {
+            background-color: #e20202;
+        }
+
+        .confetti.blue {
+            background-color: #0266c4;
+        }
+
+        .confetti.green {
+            background-color: #00bd55;
+        }
+
+        .confetti.yellow {
+            background-color: #f3f322;
+        }
+
+        .confetti.pink {
+            background-color: #fa6acf;
+        }
+
+        .confetti.purple {
+            background-color: #800080;
+        }
+
+        .confetti.orange {
+            background-color: #fd820e;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 20px;
+                padding: 15px;
+                width: 95%;
+            }
+
+            .rich-text-toolbar,
+            .emoji-keyboard,
+            .tag-container {
+                gap: 5px;
+                padding: 8px;
+            }
+
+            .rich-text-toolbar button,
+            .rich-text-toolbar select,
+            .emoji-btn,
+            .tag .tag-remove,
+            .add-tag-btn {
+                font-size: 0.9em;
+                padding: 6px 10px;
+            }
+
+            .emoji-btn {
+                font-size: 1.5em;
+            }
+
+            .button-group button {
+                min-width: unset;
+                flex: 1 1 48%;
+            }
+
+            #image-attachments-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .music-player {
+                width: 100%;
+                left: unset;
+                right: -100vw;
+                border-radius: 0;
+            }
+
+            .music-player.open {
+                right: 0;
+            }
+
+            .drawer {
+                width: 100%;
+                left: -100vw;
+                border-radius: 0;
+            }
+
+            .drawer.open {
+                left: 0;
+            }
+
+            #open-music-btn,
+            #open-sidebar-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                top: 10px;
+            }
+
+            #open-music-btn {
+                left: 10px;
+            }
+
+            #open-sidebar-btn {
+                left: 70px;
+            }
+
+            .panic-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5em;
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .diary-selection-row button {
+                flex: 1 1 100%;
+            }
+
+            .rename-input-group,
+            .search-container {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        .bat {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background-color: #333;
+            clip-path: polygon(29% 22%, 29% 22%, 29% 22%, 29% 22%, 33% 5%, 33% 5%, 33% 5%, 33% 5%, 33% 5%, 42% 21%, 42% 21%, 42% 21%, 42% 21%, 42% 21%, 54% 22%, 54% 22%, 54% 22%, 54% 22%, 54% 25%, 63% 7%, 63% 7%, 63% 7%, 63% 7%, 63% 7%, 71% 23%, 71% 23%, 71% 23%, 71% 23%, 71% 23%, 72% 39%, 72% 39%, 72% 39%, 72% 39%, 72% 39%, 59% 45%, 59% 45%, 59% 45%, 59% 45%, 59% 48%, 43% 46%, 43% 46%, 43% 46%, 43% 46%, 43% 46%, 27% 43%, 27% 43%, 27% 43%, 27% 43%, 27% 43%, 21% 30%, 21% 30%, 21% 30%, 21% 30%, 21% 30%, 25% 53%, 25% 53%, 25% 53%, 25% 53%, 25% 56%, 21% 70%, 21% 70%, 21% 70%, 21% 70%, 21% 70%, 26% 80%, 26% 80%, 26% 80%, 26% 80%, 26% 80%, 36% 82%, 36% 82%, 36% 82%, 36% 82%, 36% 82%, 49% 82%, 49% 82%, 49% 82%, 49% 82%, 49% 85%, 67% 76%, 67% 76%, 67% 76%, 67% 76%, 67% 76%, 73% 68%, 73% 68%, 73% 68%, 73% 68%, 73% 68%, 70% 54%, 70% 54%, 70% 54%, 70% 54%, 70% 54%, 77% 47%, 77% 47%, 77% 47%, 77% 47%, 77% 50%, 85% 31%, 85% 31%, 85% 31%, 85% 31%, 85% 31%, 89% 21%, 89% 21%, 89% 21%, 89% 21%, 89% 21%, 93% 35%, 93% 35%, 93% 35%, 93% 35%, 93% 35%, 97% 65%, 97% 65%, 97% 65%, 97% 65%, 97% 68%, 91% 74%, 91% 74%, 91% 74%, 91% 74%, 91% 74%, 68% 82%, 68% 82%, 68% 82%, 68% 82%, 68% 82%, 20% 51%, 20% 51%, 20% 51%, 20% 51%, 20% 51%, 12% 41%, 12% 41%, 12% 41%, 12% 41%, 12% 41%, 5% 31%, 5% 31%, 5% 31%, 5% 31%, 5% 31%, 2% 38%, 2% 38%, 2% 38%, 2% 38%, 2% 38%, 3% 51%, 3% 51%, 3% 51%, 3% 51%, 3% 51%, 4% 62%, 4% 62%, 4% 62%, 4% 62%, 4% 62%, 10% 74%, 10% 74%, 10% 74%, 10% 74%, 10% 74%, 17% 78%, 17% 78%, 17% 78%, 17% 78%, 17% 78%, 24% 80%, 24% 80%, 24% 80%, 24% 80%, 24% 80%);
+            transform-origin: center bottom;
+            animation: fly-bat linear infinite;
+            z-index: -1;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+        }
+
+        @keyframes fly-bat {
+            0% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+
+            25% {
+                transform: translateX(50px) translateY(-20px) rotate(10deg);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translateX(100px) translateY(0) rotate(0deg);
+                opacity: 0.5;
+            }
+
+            75% {
+                transform: translateX(50px) translateY(20px) rotate(-10deg);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ff8f8f;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 3px rgba(230, 230, 230, 0.8);
+            animation: twinkle-sparkle 1.5s ease-in-out infinite alternate;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle-sparkle {
+            0% {
+                transform: scale(0.5) rotate(0deg);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: scale(1.2) rotate(45deg);
+                opacity: 1;
+                box-shadow: 0 0 10px 5px rgb(207, 176, 176);
+            }
+
+            100% {
+                transform: scale(0.5) rotate(90deg);
+                opacity: 0.7;
+            }
+        }
+
+        .glitch {
+            position: absolute;
+            background-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.7), 0 0 20px 10px rgba(255, 0, 255, 0.5);
+            animation: glitch-fade 0.5s steps(1) infinite alternate;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes glitch-fade {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translate(5px, -5px) scale(1.1);
+            }
+
+            50% {
+                opacity: 0;
+                transform: translate(-5px, 5px) scale(0.9);
+            }
+
+            75% {
+                opacity: 1;
+                transform: translate(10px, 0) scale(1.05);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(0, -10px) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-animation" id="animation-container"></div>
+    <main class="container" id="auth-container">
+        <h1>My Diary</h1>
+        <div class="auth-wrapper">
+            <input type="password" id="password" placeholder="Enter your password" autocomplete="off">
+            <button onclick="authenticate()">Unlock</button>
+            <p><small>Hint: Try With your name or your bias name</small></p>
+        </div>
+    </main>
+    <section class="container hidden" id="diary-container">
+        <header class="diary-header">
+            <div class="theme-selector">
+                <button class="theme-btn default-theme" onclick="setTheme('default')" title="Default Theme"></button>
+                <button class="theme-btn dark-theme" onclick="setTheme('dark')" title="Dark Mode"></button>
+                <button class="theme-btn vampire-theme-btn" onclick="setTheme('vampire')"
+                    title="Vampire Theme"></button>
+                <button class="theme-btn unicorn-theme-btn" onclick="setTheme('unicorn')"
+                    title="Unicorn Theme"></button>
+                <button class="theme-btn darkacademia-theme-btn" onclick="setTheme('darkacademia')"
+                    title="Dark Academia"></button>
+                <button class="theme-btn neon-theme-btn" onclick="setTheme('neon')" title="Neon Theme"></button>
+                <button class="theme-btn valentine-theme-btn active" onclick="setTheme('valentine')"
+                    title="Valentine Theme"></button>
+            </div>
+        </header>
+        <article class="main-editor-area">
+            <div class="diary-top-controls">
+                <div class="diary-selection-row">
+                    <select id="diary-selector" onchange="loadSelectedDiary()">
+                    </select>
+                    <button id="rename-diary-btn" onclick="toggleRenameInput()">Rename Diary</button>
+                    <button id="delete-diary-btn" onclick="deleteDiary()">Delete Diary</button>
+                </div>
+                <div class="rename-input-group hidden" id="rename-input-group">
+                    <input type="text" id="rename-diary-input" placeholder="New diary name">
+                    <button onclick="applyRename()">Apply Rename</button>
+                </div>
+                <div class="new-diary-group hidden" id="new-diary-group">
+                    <input type="text" id="new-diary-name" placeholder="New diary name">
+                    <button onclick="createNewDiary()" id="create-diary-btn">Create Diary</button>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search entries...">
+                    <button onclick="searchEntries()">Search</button>
+                </div>
+            </div>
+            <div class="prompt-container hidden" id="prompt-container">
+                <div class="prompt-text" id="daily-prompt">Your daily prompt will appear here!</div>
+                <button onclick="hidePrompt()">Hide Prompt</button>
+            </div>
+            <div class="mood-tracker">
+                <h3>Today's Mood</h3>
+                <div class="mood-options">
+                    <div class="mood-option" data-mood="5" onclick="setMood(5)" aria-label="Happy Mood">
+                        😊<span>Happy</span></div>
+                    <div class="mood-option" data-mood="4" onclick="setMood(4)" aria-label="Good Mood">
+                        🙂<span>Good</span></div>
+                    <div class="mood-option" data-mood="3" onclick="setMood(3)" aria-label="Neutral Mood">
+                        😐<span>Neutral</span></div>
+                    <div class="mood-option" data-mood="2" onclick="setMood(2)" aria-label="Sad Mood">😕<span>Sad</span>
+                    </div>
+                    <div class="mood-option" data-mood="1" onclick="setMood(1)" aria-label="Awful Mood">
+                        😢<span>Awful</span></div>
+                </div>
+            </div>
+            <div class="rich-text-toolbar">
+                <select class="font-selector" id="font-selector" onchange="setFont()">
+                    <option value="'Indie Flower', cursive">Indie Flower</option>
+                    <option value="'Comic Neue', cursive">Comic Neue</option>
+                    <option value="'Caveat', cursive">Caveat</option>
+                    <option value="'Pacifico', cursive">Pacifico</option>
+                    <option value="'Special Elite', monospace">Special Elite</option>
+                    <option value="'Permanent Marker', cursive">Permanent Marker</option>
+                    <option value="'Cinzel Decorative', serif">Cinzel Decorative</option>
+                    <option value="'Cutive Mono', monospace">Cutive Mono</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                </select>
+                <button class="rich-text-btn" onclick="formatText('bold')" title="Bold"><b>B</b></button>
+                <button class="rich-text-btn" onclick="formatText('italic')" title="Italic"><i>I</i></button>
+                <button class="rich-text-btn" onclick="formatText('underline')" title="Underline"><u>U</u></button>
+                <button class="rich-text-btn" onclick="formatText('strikeThrough')"
+                    title="Strikethrough"><s>S</s></button>
+                <button class="rich-text-btn" onclick="formatText('hiliteColor', 'var(--highlight-color)')"
+                    title="Highlight">Highlight</button>
+                <button class="rich-text-btn" onclick="formatText('insertUnorderedList')" title="Bullet List">•
+                    List</button>
+                <button class="rich-text-btn" onclick="insertImage()" title="Insert Image">🖼️ Image</button>
+                <button class="rich-text-btn" onclick="startVoiceInput()" title="Voice to Text">🎤 Voice</button>
+            </div>
+            <div class="emoji-keyboard">
+                <button class="emoji-btn" onclick="insertEmoji('❤️')" title="Red Heart">❤️</button>
+                <button class="emoji-btn" onclick="insertEmoji('👀')" title="Eyes">👀</button>
+                <button class="emoji-btn" onclick="insertEmoji('✨')" title="Sparkles">✨</button>
+                <button class="emoji-btn" onclick="insertEmoji('😊')" title="Smiling Face">😊</button>
+                <button class="emoji-btn" onclick="insertEmoji('😂')" title="Face with Tears of Joy">😂</button>
+                <button class="emoji-btn" onclick="insertEmoji('😭')" title="Loudly Crying Face">😭</button>
+                <button class="emoji-btn" onclick="insertEmoji('😡')" title="Pouting Face">😡</button>
+                <button class="emoji-btn" onclick="insertEmoji('🤔')" title="Thinking Face">🤔</button>
+                <button class="emoji-btn" onclick="insertEmoji('😖')" title="Guilty">😖</button>
+                <button class="emoji-btn" onclick="insertEmoji('🙄')" title="Annoyed">🙄</button>
+                <button class="emoji-btn" onclick="insertEmoji('😳')" title="Awkward2">😳</button>
+                <button class="emoji-btn" onclick="insertEmoji('😬')" title="Awkward">😬</button>
+                <button class="emoji-btn" onclick="insertEmoji('💋')" title="Kiss Mark">💋</button>
+                <button class="emoji-btn" onclick="insertEmoji('😈')" title="evil face">😈</button>
+                <button class="emoji-btn" onclick="insertEmoji('🥵')" title="Hot Face">🥵</button>
+                <button class="emoji-btn" onclick="insertEmoji('😜')" title="Winking mock Face">😜</button>
+                <button class="emoji-btn" onclick="insertEmoji('😏')" title="Smirking Face">😏</button>
+                <button class="emoji-btn" onclick="insertEmoji('😌')" title="Relieved Face">😌</button>
+                <button class="emoji-btn" onclick="insertEmoji('🤧')" title="Wiping Nose">🤧</button>
+                <button class="emoji-btn" onclick="insertEmoji('😐')" title="Straight face">😐</button>
+                <button class="emoji-btn" onclick="insertEmoji('🤭')" title="Blush">🤭</button>
+                <button class="emoji-btn" onclick="insertEmoji('🤫')" title="Secret">🤫</button>
+                <button class="emoji-btn" onclick="insertEmoji('🥰')" title="Lovely">🥰</button>
+                <button class="emoji-btn" onclick="insertEmoji('😎')" title="Cool">😎</button>
+            </div>
+            <div class="tag-container" id="tag-container">
+                <input type="text" id="new-tag-input" class="new-tag-input"
+                    placeholder="Add tag (e.g., #friends, #travel)...">
+                <button class="add-tag-btn" onclick="addTag()">+</button>
+            </div>
+            <div id="diary-editor" contenteditable="true" data-placeholder="What's on your mind today? Write here...">
+            </div>
+            <div class="button-group">
+                <button onclick="saveDiary()">Save Entry</button>
+                <button onclick="lockDiary()">Lock Diary</button>
+                <button onclick="showPrompt()" id="prompt-button">Get Prompt</button>
+                <button class="print-button" onclick="printEntry()">Print</button>
+            </div>
+            <div id="image-attachments-container"></div>
+        </article>
+    </section>
+    <aside class="drawer2 hidden" id="diary-sidebar">
+        <div class="drawer2-header">
+            <h3>My Diaries</h3>
+            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        </div>
+        <div class="search-diary-list">
+            <input type="text" id="sidebar-search-input" placeholder="Search diaries...">
+        </div>
+        <ul class="diary-list" id="diary-list">
+        </ul>
+        <div class="diary-actions">
+            <input type="text" id="new-diary-name-sidebar" placeholder="New diary name">
+            <button onclick="createNewDiaryFromSidebar()">Create New Diary</button>
+        </div>
+    </aside>
+    <div class="container hidden" id="fake-diary-container">
+        <h1>My Diary</h1>
+        <div id="fake-diary-content">
+            <p>Today was incredibly dull. I woke up, ate, and then stared at a wall for several hours. The highlight of
+                my day was watching paint dry. Truly thrilling...</p>
+            <p>The weather was whatever... absolutely nothing noteworthy. I even wrote 1000 lines of code and my hand
+                hurts...</p>
+            <p>I hope tomorrow is better... something exciting!</p>
+        </div>
+        <button onclick="lockDiary()">Return to Login</button>
+    </div>
+    <div class="error-page hidden" id="error-page">
+        <h1>404</h1>
+        <p>Page Not Found (oops!)</p>
+        <button onclick="goToSafeMode()">Go to Safe Mode</button>
+    </div>
+    <button class="panic-button hidden" onclick="showErrorPage()" aria-label="Panic Button">🚨</button>
+    <div class="music-player hidden" id="music-player">
+        <div class="music-header">
+            <h3>My Playlist</h3>
+            <button class="close-music" onclick="toggleMusicPlayer()" aria-label="Close Music Player">&times;</button>
+        </div>
+        <ul class="playlist" id="playlist">
+            <li data-src="sounds/bgsound00.mp3">Love Story (fast)- Indila</li>
+            <li data-src="sounds/bgsound01.mp3">Love Story (slowed)- Indila</li>
+            <li data-src="sounds/bgsound02.mp3">Love Story (original) - Indila</li>
+            <li data-src="sounds/bgsound12.mp3">Love Story (piano)- Indila</li>
+            <li data-src="sounds/bgsound03.mp3">Under The Influence (original) - Chris Brown</li>
+            <li data-src="sounds/bgsound04.mp3">Under The Influence (fast) - Chris Brown</li>
+            <li data-src="sounds/bgsound05.mp3">Under The Influence (slowed) - Chris Brown</li>
+            <li data-src="sounds/bgsound06.mp3">Suzumi - Radwimps</li>
+            <li data-src="sounds/bgsound07.mp3">Bad Boy - Marwa Loud</li>
+            <li data-src="sounds/bgsound13.mp3">YAD - Vanna Rainelle</li>
+            <li data-src="sounds/bgsound14.mp3">Яд - Vanna Rainelle</li>
+            <li data-src="sounds/bgsound08.mp3">Chuttamalle - Shilpa Rao</li>
+            <li data-src="sounds/bgsound09.mp3">I Wanna Be Yours - Arctic Monkeys</li>
+            <li data-src="sounds/bgsound10.mp3">Dandalions - Ruth B.</li>
+            <li data-src="sounds/bgsound11.mp3">Strangers - Keneya Grace</li>
+        </ul>
+        <div class="progress-container" id="music-progress-container">
+            <div class="progress-bar" id="music-progress-bar"></div>
+        </div>
+        <div class="time-display">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+        <div class="player-controls">
+            <button class="control-btn" onclick="prevSong()" aria-label="Previous Song">⏮</button>
+            <button class="control-btn" onclick="togglePlayPause()" id="play-pause-btn"
+                aria-label="Play/Pause">▶</button>
+            <button class="control-btn" onclick="nextSong()" aria-label="Next Song">⏭</button>
+            <div class="volume-control">
+                <button class="control-btn" onclick="toggleMute()" id="mute-btn" aria-label="Mute/Unmute">🔊</button>
+                <input type="range" min="0" max="1" step="0.01" value="1" class="volume-slider" id="volume-slider"
+                    oninput="setVolume()" aria-label="Volume Slider">
+            </div>
+            <button class="control-btn loop-btn" onclick="toggleLoop()" id="loop-btn"
+                aria-label="Toggle Loop">🔁</button>
+        </div>
+        <audio id="audio-player"></audio>
+    </div>
+    <button id="open-music-btn" class="hidden" onclick="toggleMusicPlayer()" aria-label="Open Music Player">🎶</button>
+    <button id="open-sidebar-btn" class="hidden" onclick="toggleSidebar()" aria-label="Open Diary List">📖</button>
+    <div class="flappy-bird hidden" id="flappy-bird">
+        <button class="close-game" onclick="closeGame()" aria-label="Close Game">&times;</button>
+        <div class="score-display">Score: <span id="score">0</span></div>
+        <div class="flappy-container" id="flappy-container">
+            <div class="bird" id="bird"></div>
+        </div>
+        <button class="control-btn" onclick="startGame()" id="start-game-btn">Start Game</button>
+    </div>
+
+    <script>
+        const authContainer = document.getElementById('auth-container');
+        const diaryContainer = document.getElementById('diary-container');
+        const fakeDiaryContainer = document.getElementById('fake-diary-container');
+        const errorPage = document.getElementById('error-page');
+        const passwordInput = document.getElementById('password');
+        const diaryEditor = document.getElementById('diary-editor');
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const animationContainer = document.getElementById('animation-container');
+        const diarySelector = document.getElementById('diary-selector');
+        const renameDiaryBtn = document.getElementById('rename-diary-btn');
+        const deleteDiaryBtn = document.getElementById('delete-diary-btn');
+        const renameInputGroup = document.getElementById('rename-input-group');
+        const renameDiaryInput = document.getElementById('rename-diary-input');
+        const newDiaryGroup = document.getElementById('new-diary-group');
+        const newDiaryNameInput = document.getElementById('new-diary-name');
+        const createDiaryBtn = document.getElementById('create-diary-btn');
+        const diaryList = document.getElementById('diary-list');
+        const sidebarSearchInput = document.getElementById('sidebar-search-input');
+        const moodOptions = document.querySelectorAll('.mood-option');
+        const dailyPromptDiv = document.getElementById('daily-prompt');
+        const promptContainer = document.getElementById('prompt-container');
+        const newTagInput = document.getElementById('new-tag-input');
+        const tagContainer = document.getElementById('tag-container');
+        const imageAttachmentsContainer = document.getElementById('image-attachments-container');
+        const musicPlayer = document.getElementById('music-player');
+        const audioPlayer = document.getElementById('audio-player');
+        const playlistElement = document.getElementById('playlist');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const musicProgressBar = document.getElementById('music-progress-bar');
+        const musicProgressContainer = document.getElementById('music-progress-container');
+        const currentTimeSpan = document.getElementById('current-time');
+        const durationSpan = document.getElementById('duration');
+        const volumeSlider = document.getElementById('volume-slider');
+        const muteBtn = document.getElementById('mute-btn');
+        const loopBtn = document.getElementById('loop-btn');
+        const openMusicBtn = document.getElementById('open-music-btn');
+        const panicButton = document.querySelector('.panic-button');
+        const flappyBirdContainer = document.getElementById('flappy-bird');
+        const flappyGameContainer = document.getElementById('flappy-container');
+        const bird = document.getElementById('bird');
+        const scoreDisplay = document.getElementById('score');
+        const startGameBtn = document.getElementById('start-game-btn');
+        const sidebar = document.getElementById('diary-sidebar');
+        const openSidebarBtn = document.getElementById('open-sidebar-btn');
+        const SECRET_PASSWORD = "parksunghoon";
+        const DECOY_PASSWORD = "heywani12345";
+        let currentDiaryId = 'main';
+        let diaries = {};
+        let currentTheme = localStorage.getItem('diaryTheme') || 'valentine';
+        let currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
+        let isPlaying = false;
+        let isMuted = false;
+        let isLooping = false;
+        let gameInterval = null;
+        let pipeInterval = null;
+        let birdGravity = 0;
+        let birdPosition = 150;
+        let gameScore = 0;
+        let gameRunning = false;
+        const initialGameSpeed = 2;
+        let gameSpeed = initialGameSpeed;
+        const dailyPrompts = [
+            "What's one small thing that made you smile today?",
+            "If your day were a song, what would it be and why?",
+            "Describe a moment when you felt truly inspired.",
+            "What challenge did you overcome today, no matter how small?",
+            "Write about a dream you had recently.",
+            "What are you looking forward to most in the next week?",
+            "If you could have a superpower for a day, what would it be?",
+            "What is a personal goal you're currently working towards?",
+            "Describe a place that feels like 'home' to you.",
+            "What's a piece of advice you'd give your past self?",
+            "What are three things you are grateful for right now?",
+            "Write about a new skill or hobby you'd like to learn.",
+            "If you could travel anywhere in the world, where would you go?",
+            "What's a quote or philosophy that resonates with you?",
+        ];
+        function getTodayDate() {
+            return new Date().toISOString().slice(0, 10);
+        }
+        function saveData() {
+            localStorage.setItem('diaries', JSON.stringify(diaries));
+            localStorage.setItem('currentDiaryId', currentDiaryId);
+        }
+        function loadData() {
+            const storedDiaries = localStorage.getItem('diaries');
+            if (storedDiaries) {
+                diaries = JSON.parse(storedDiaries);
+            } else {
+                diaries = {
+                    'main': {
+                        name: 'My Main Diary',
+                        entries: {},
+                        lastPromptDate: null,
+                        moods: {}
+                    }
+                };
+            }
+            currentDiaryId = localStorage.getItem('currentDiaryId') || 'main';
+            if (!diaries[currentDiaryId] || Object.keys(diaries).length === 0) {
+                currentDiaryId = Object.keys(diaries)[0] || 'main';
+                if (!diaries[currentDiaryId]) {
+                    diaries['main'] = { name: 'My Main Diary', entries: {}, lastPromptDate: null, moods: {} };
+                    currentDiaryId = 'main';
+                }
+            }
+            saveData();
+        }
+        function showElement(element) {
+            element.classList.remove('hidden');
+        }
+        function hideElement(element) {
+            element.classList.add('hidden');
+        }
+        function authenticate() {
+            const enteredPassword = passwordInput.value;
+            if (enteredPassword === SECRET_PASSWORD) {
+                loginSuccess();
+            } else if (enteredPassword === DECOY_PASSWORD) {
+                loginDecoy();
+            } else {
+                alert('Incorrect password! Try again or bring the real owner of this diary!');
+            }
+            passwordInput.value = '';
+        }
+        function loginSuccess() {
+            hideElement(authContainer);
+            showElement(diaryContainer);
+            showElement(openMusicBtn);
+            showElement(openSidebarBtn);
+            showElement(panicButton);
+            loadDiaryContent();
+            loadDiaryList();
+            setTheme(currentTheme);
+        }
+        function loginDecoy() {
+            hideElement(authContainer);
+            showElement(fakeDiaryContainer);
+            hideElement(panicButton);
+        }
+        function lockDiary() {
+            hideElement(diaryContainer);
+            hideElement(fakeDiaryContainer);
+            hideElement(errorPage);
+            hideElement(musicPlayer);
+            hideElement(openMusicBtn);
+            hideElement(openSidebarBtn);
+            hideElement(flappyBirdContainer);
+            hideElement(sidebar);
+            hideElement(panicButton);
+            showElement(authContainer);
+            passwordInput.value = '';
+            stopMusic();
+            stopGame();
+            hideElement(renameInputGroup);
+            hideElement(newDiaryGroup);
+            renameDiaryBtn.textContent = 'Rename Diary';
+        }
+        function setTheme(themeName) {
+            const body = document.body;
+            body.className = '';
+            if (themeName !== 'default') {
+                body.classList.add(`theme-${themeName}`);
+            }
+            localStorage.setItem('diaryTheme', themeName);
+            currentTheme = themeName;
+
+            themeButtons.forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.querySelector(`.theme-btn.${themeName}-theme-btn`) || document.querySelector(`.theme-btn.default-theme`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+
+            animationContainer.innerHTML = '';
+            hideElement(animationContainer);
+
+            if (themeName === 'valentine') {
+                for (let i = 0; i < 15; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    heart.style.left = `${Math.random() * 100}vw`;
+                    heart.style.animationDuration = `${5 + Math.random() * 10}s`;
+                    heart.style.animationDelay = `${Math.random() * 5}s`;
+                    heart.style.opacity = `${0.5 + Math.random() * 0.5}`;
+                    animationContainer.appendChild(heart);
+                }
+                showElement(animationContainer);
+            } else if (themeName === 'vampire') {
+                for (let i = 0; i < 10; i++) {
+                    const bat = document.createElement('div');
+                    bat.classList.add('bat');
+                    bat.style.left = `${Math.random() * 100}vw`;
+                    bat.style.top = `${Math.random() * 80}vh`;
+                    bat.style.animationDuration = `${8 + Math.random() * 7}s`;
+                    bat.style.animationDelay = `${Math.random() * 5}s`;
+                    bat.style.opacity = `${0.3 + Math.random() * 0.4}`;
+                    animationContainer.appendChild(bat);
+                }
+                showElement(animationContainer);
+            } else if (themeName === 'unicorn') {
+                for (let i = 0; i < 20; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.classList.add('sparkle');
+                    sparkle.style.left = `${Math.random() * 100}vw`;
+                    sparkle.style.top = `${Math.random() * 100}vh`;
+                    sparkle.style.animationDuration = `${1 + Math.random() * 2}s`;
+                    sparkle.style.animationDelay = `${Math.random() * 1}s`;
+                    sparkle.style.opacity = `${0.7 + Math.random() * 0.3}`;
+                    animationContainer.appendChild(sparkle);
+                }
+                showElement(animationContainer);
+            } else if (themeName === 'neon') {
+                for (let i = 0; i < 25; i++) {
+                    const glitch = document.createElement('div');
+                    glitch.classList.add('glitch');
+                    glitch.style.left = `${Math.random() * 100}vw`;
+                    glitch.style.top = `${Math.random() * 100}vh`;
+                    glitch.style.width = `${10 + Math.random() * 50}px`;
+                    glitch.style.height = `${10 + Math.random() * 50}px`;
+                    glitch.style.animationDuration = `${0.1 + Math.random() * 0.5}s`;
+                    glitch.style.animationDelay = `${Math.random() * 3}s`;
+                    glitch.style.opacity = `${0.2 + Math.random() * 0.6}`;
+                    animationContainer.appendChild(glitch);
+                }
+                showElement(animationContainer);
+            }
+            diaryEditor.style.fontFamily = getComputedStyle(document.body).getPropertyValue('--content-font') || 'Arial', 'sans-serif';
+            document.getElementById('font-selector').value = diaryEditor.style.fontFamily;
+        }
+        function filterDiaryList() {
+            const searchTerm = sidebarSearchInput.value.toLowerCase();
+            const items = diaryList.querySelectorAll('li');
+            items.forEach(item => {
+                if (item.textContent.toLowerCase().includes(searchTerm)) {
+                    showElement(item);
+                } else {
+                    hideElement(item);
+                }
+            });
+        }
+        function loadDiaryList() {
+            diarySelector.innerHTML = '';
+            diaryList.innerHTML = '';
+            const createNewOption = document.createElement('option');
+            createNewOption.value = 'new';
+            createNewOption.textContent = '✨ Create New Diary...';
+            diarySelector.appendChild(createNewOption);
+            for (const id in diaries) {
+                const option = document.createElement('option');
+                option.value = id;
+                option.textContent = diaries[id].name;
+                diarySelector.appendChild(option);
+                const listItem = document.createElement('li');
+                listItem.dataset.diaryId = id;
+                listItem.textContent = diaries[id].name;
+                listItem.addEventListener('click', () => selectDiary(id));
+                diaryList.appendChild(listItem);
+            }
+            diarySelector.value = currentDiaryId;
+            document.querySelectorAll('.diary-list li').forEach(li => {
+                if (li.dataset.diaryId === currentDiaryId) {
+                    li.classList.add('active-diary');
+                } else {
+                    li.classList.remove('active-diary');
+                }
+            });
+            sidebarSearchInput.addEventListener('input', filterDiaryList);
+            filterDiaryList();
+            hideElement(newDiaryGroup);
+            hideElement(renameInputGroup);
+            renameDiaryBtn.textContent = 'Rename Diary';
+        }
+        function loadSelectedDiary() {
+            const selectedValue = diarySelector.value;
+            if (selectedValue === 'new') {
+                showElement(newDiaryGroup);
+                hideElement(renameInputGroup);
+                renameDiaryBtn.textContent = 'Rename Diary';
+            } else {
+                currentDiaryId = selectedValue;
+                saveData();
+                loadDiaryContent();
+                loadDiaryList();
+                hideElement(newDiaryGroup);
+                hideElement(renameInputGroup);
+                renameDiaryBtn.textContent = 'Rename Diary';
+            }
+        }
+        function createNewDiary() {
+            const newName = newDiaryNameInput.value.trim();
+            if (!newName) {
+                alert('Please enter a name for the new diary.');
+                return;
+            }
+            if (Object.values(diaries).some(diary => diary.name.toLowerCase() === newName.toLowerCase())) {
+                alert('A diary with this name already exists. Please choose a different name.');
+                return;
+            }
+            const newId = `diary-${Date.now()}`;
+            diaries[newId] = { name: newName, entries: {}, lastPromptDate: null, moods: {} };
+            currentDiaryId = newId;
+            newDiaryNameInput.value = '';
+            hideElement(newDiaryGroup);
+            saveData();
+            loadDiaryContent();
+            loadDiaryList();
+            alert(`Diary "${newName}" created!`);
+        }
+        function createNewDiaryFromSidebar() {
+            const newName = newDiaryNameSidebarInput.value.trim();
+            if (!newName) {
+                alert('Please enter a name for the new diary.');
+                return;
+            }
+            if (Object.values(diaries).some(diary => diary.name.toLowerCase() === newName.toLowerCase())) {
+                alert('A diary with this name already exists. Please choose a different name.');
+                return;
+            }
+            const newId = `diary-${Date.now()}`;
+            diaries[newId] = { name: newName, entries: {}, lastPromptDate: null, moods: {} };
+            currentDiaryId = newId;
+            newDiaryNameSidebarInput.value = '';
+            saveData();
+            loadDiaryContent();
+            loadDiaryList();
+            alert(`Diary "${newName}" created!`);
+        }
+        function toggleRenameInput() {
+            if (renameInputGroup.classList.contains('hidden')) {
+                hideElement(newDiaryGroup);
+                showElement(renameInputGroup);
+                renameDiaryInput.value = diaries[currentDiaryId].name;
+                renameDiaryBtn.textContent = 'Cancel Rename';
+            } else {
+                hideElement(renameInputGroup);
+                renameDiaryBtn.textContent = 'Rename Diary';
+            }
+        }
+        function applyRename() {
+            const newName = renameDiaryInput.value.trim();
+            if (!newName) {
+                alert('Please enter a new name for the diary.');
+                return;
+            }
+            if (Object.values(diaries).some(diary => diary.name.toLowerCase() === newName.toLowerCase() && diary.name !== diaries[currentDiaryId].name)) {
+                alert('A diary with this name already exists. Please choose a different name.');
+                return;
+            }
+            diaries[currentDiaryId].name = newName;
+            saveData();
+            loadDiaryList();
+            hideElement(renameInputGroup);
+            renameDiaryBtn.textContent = 'Rename Diary';
+            alert(`Diary renamed to "${newName}"!`);
+        }
+        function deleteDiary() {
+            if (Object.keys(diaries).length === 1) {
+                alert("You cannot delete your last diary. Please create a new one first if you wish to replace it.");
+                return;
+            }
+            const confirmDelete = confirm(`Are you sure you want to delete the diary "${diaries[currentDiaryId].name}"? This action cannot be undone.`);
+            if (confirmDelete) {
+                delete diaries[currentDiaryId];
+                const diaryIds = Object.keys(diaries);
+                if (diaryIds.length > 0) {
+                    currentDiaryId = diaryIds[0];
+                } else {
+                    diaries['main'] = { name: 'My Main Diary', entries: {}, lastPromptDate: null, moods: {} };
+                    currentDiaryId = 'main';
+                }
+                saveData();
+                loadDiaryContent();
+                loadDiaryList();
+                alert('Diary deleted successfully.');
+            }
+        }
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            if (sidebar.classList.contains('open')) {
+                showElement(sidebar);
+            } else {
+                hideElement(sidebar);
+            }
+        }
+        function loadDiaryContent() {
+            const today = getTodayDate();
+            const currentEntry = diaries[currentDiaryId].entries[today];
+            if (currentEntry) {
+                diaryEditor.innerHTML = currentEntry.content;
+                renderTags(currentEntry.tags || []);
+                selectMood(currentEntry.mood);
+                renderImages(currentEntry.images || []);
+            } else {
+                diaryEditor.innerHTML = '';
+                renderTags([]);
+                selectMood(null);
+                renderImages([]);
+            }
+            diaryEditor.style.fontFamily = getComputedStyle(document.body).getPropertyValue('--content-font') || 'Arial', 'sans-serif';
+            document.getElementById('font-selector').value = diaryEditor.style.fontFamily;
+        }
+        function saveDiary() {
+            const today = getTodayDate();
+            const content = diaryEditor.innerHTML;
+            const selectedMood = document.querySelector('.mood-option.selected')?.dataset.mood || null;
+            const currentTags = Array.from(tagContainer.querySelectorAll('.tag span:first-child')).map(span => span.textContent);
+            const currentImages = Array.from(imageAttachmentsContainer.querySelectorAll('.image-attachment')).map(div => {
+                const img = div.querySelector('img');
+                const caption = div.querySelector('input[type="text"]')?.value || '';
+                return { src: img.src, caption: caption };
+            });
+            diaries[currentDiaryId].entries[today] = {
+                content: content,
+                mood: selectedMood,
+                tags: currentTags,
+                images: currentImages,
+                timestamp: new Date().toISOString()
+            };
+            diaries[currentDiaryId].moods[today] = selectedMood;
+            saveData();
+            alert('Diary entry saved!');
+        }
+        function searchEntries() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const entries = diaries[currentDiaryId].entries;
+            let results = [];
+            for (const date in entries) {
+                const entry = entries[date];
+                const entryContent = entry.content.toLowerCase();
+                const entryTags = (entry.tags || []).map(tag => tag.toLowerCase());
+                if (entryContent.includes(searchTerm) || entryTags.some(tag => tag.includes(searchTerm))) {
+                    results.push(`<h3>${date}</h3><p>${entry.content}</p><p>Tags: ${entry.tags ? entry.tags.join(', ') : 'None'}</p><hr>`);
+                }
+            }
+            if (results.length > 0) {
+                diaryEditor.innerHTML = `<h2>Search Results for "${searchTerm}"</h2>` + results.join('');
+                diaryEditor.contentEditable = false;
+                alert('Search results loaded into editor. Click Save or change diary to clear.');
+            } else {
+                alert('No entries found matching your search.');
+            }
+        }
+        function formatText(command, value = null) {
+            if (command === 'highlight') {
+                const selection = window.getSelection();
+                if (!selection.rangeCount) return;
+                const range = selection.getRangeAt(0);
+                const span = document.createElement('span');
+                span.classList.add('highlight');
+                try {
+                    range.surroundContents(span);
+                } catch (e) {
+                    document.execCommand('hiliteColor', false, getComputedStyle(document.body).getPropertyValue('--highlight-color'));
+                }
+            } else {
+                document.execCommand(command, false, value);
+            }
+            diaryEditor.focus();
+        }
+        function setFont() {
+            const font = document.getElementById('font-selector').value;
+            document.execCommand('fontName', false, font);
+            diaryEditor.focus();
+        }
+        function insertEmoji(emoji) {
+            document.execCommand('insertText', false, emoji);
+            diaryEditor.focus();
+        }
+        function insertImage() {
+            const url = prompt('Enter image URL or select a file (type "file" to choose from your computer):');
+            if (!url) return;
+            if (url.toLowerCase() === 'file') {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (readerEvent) => {
+                            const base64Image = readerEvent.target.result;
+                            addImageToEditor(base64Image);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                };
+                input.click();
+            } else {
+                addImageToEditor(url);
+            }
+            diaryEditor.focus();
+        }
+        function addImageToEditor(src, caption = '') {
+            const imgDiv = document.createElement('div');
+            imgDiv.classList.add('image-attachment');
+            const imgContainer = document.createElement('div');
+            imgContainer.classList.add('image-preview-container');
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Diary Image';
+            img.onerror = () => {
+                imgContainer.innerHTML = '<div class="broken-image-placeholder">Broken Image</div>';
+                img.src = '';
+            };
+            imgContainer.appendChild(img);
+            const captionInput = document.createElement('input');
+            captionInput.type = 'text';
+            captionInput.placeholder = 'Add a caption (optional)';
+            captionInput.value = caption;
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-image-btn');
+            deleteButton.innerHTML = '&times;';
+            deleteButton.onclick = () => imgDiv.remove();
+            imgDiv.appendChild(imgContainer);
+            imgDiv.appendChild(captionInput);
+            imgDiv.appendChild(deleteButton);
+            imageAttachmentsContainer.appendChild(imgDiv);
+        }
+        function renderImages(images) {
+            imageAttachmentsContainer.innerHTML = '';
+            images.forEach(imgData => {
+                addImageToEditor(imgData.src, imgData.caption);
+            });
+        }
+        function startVoiceInput() {
+            if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                recognition.interimResults = true;
+                recognition.lang = 'en-US';
+                recognition.addEventListener('result', e => {
+                    const transcript = Array.from(e.results)
+                        .map(result => result[0])
+                        .map(result => result.transcript)
+                        .join('');
+                    const selection = window.getSelection();
+                    if (selection.rangeCount > 0) {
+                        const range = selection.getRangeAt(0);
+                        range.deleteContents();
+                        range.insertNode(document.createTextNode(transcript));
+                        range.collapse(false);
+                    } else {
+                        diaryEditor.textContent += transcript;
+                    }
+                });
+                recognition.addEventListener('end', () => {
+                    diaryEditor.focus();
+                });
+                recognition.start();
+                alert('Voice input started. Speak now...');
+            } else {
+                alert('Your browser does not support Web Speech API. Try Chrome or Edge.');
+            }
+        }
+        function selectMood(mood) {
+            moodOptions.forEach(option => {
+                if (option.dataset.mood === String(mood)) {
+                    option.classList.add('selected');
+                } else {
+                    option.classList.remove('selected');
+                }
+            });
+        }
+        function setMood(mood) {
+            selectMood(mood);
+        }
+        function showPrompt() {
+            const today = getTodayDate();
+            let currentDiary = diaries[currentDiaryId];
+            if (currentDiary.lastPromptDate === today && currentDiary.todayPrompt) {
+                dailyPromptDiv.textContent = currentDiary.todayPrompt;
+            } else {
+                const randomIndex = Math.floor(Math.random() * dailyPrompts.length);
+                dailyPromptDiv.textContent = dailyPrompts[randomIndex];
+                currentDiary.lastPromptDate = today;
+                currentDiary.todayPrompt = dailyPrompts[randomIndex];
+                saveData();
+            }
+            showElement(promptContainer);
+        }
+        function hidePrompt() {
+            hideElement(promptContainer);
+        }
+        function addTag() {
+            const tagText = newTagInput.value.trim();
+            if (tagText) {
+                const existingTags = Array.from(tagContainer.querySelectorAll('.tag span:first-child')).map(span => span.textContent);
+                if (existingTags.includes(tagText)) {
+                    alert('Tag already exists!');
+                    newTagInput.value = '';
+                    return;
+                }
+                const tagDiv = document.createElement('div');
+                tagDiv.classList.add('tag');
+                tagDiv.innerHTML = `<span>${tagText}</span><button class="tag-remove">&times;</button>`;
+                tagContainer.insertBefore(tagDiv, newTagInput);
+                newTagInput.value = '';
+                tagDiv.querySelector('.tag-remove').onclick = () => tagDiv.remove();
+            }
+        }
+        function renderTags(tags) {
+            Array.from(tagContainer.children).forEach(child => {
+                if (!child.classList.contains('new-tag-input') && !child.classList.contains('add-tag-btn')) {
+                    child.remove();
+                }
+            });
+            tags.forEach(tagText => {
+                const tagDiv = document.createElement('div');
+                tagDiv.classList.add('tag');
+                tagDiv.innerHTML = `<span>${tagText}</span><button class="tag-remove">&times;</button>`;
+                tagContainer.insertBefore(tagDiv, newTagInput);
+                tagDiv.querySelector('.tag-remove').onclick = () => tagDiv.remove();
+            });
+        }
+        function showErrorPage() {
+            hideElement(authContainer);
+            hideElement(diaryContainer);
+            hideElement(fakeDiaryContainer);
+            hideElement(musicPlayer);
+            hideElement(openMusicBtn);
+            hideElement(openSidebarBtn);
+            hideElement(flappyBirdContainer);
+            hideElement(sidebar);
+            hideElement(panicButton);
+            showElement(errorPage);
+            stopMusic();
+            stopGame();
+            hideElement(renameInputGroup);
+            hideElement(newDiaryGroup);
+            renameDiaryBtn.textContent = 'Rename Diary';
+        }
+        function goToSafeMode() {
+            hideElement(errorPage);
+            showElement(authContainer);
+            showElement(panicButton);
+            passwordInput.value = '';
+        }
+        function initializeMusicPlayer() {
+            const songs = Array.from(playlistElement.children).map(li => ({
+                title: li.textContent,
+                src: li.dataset.src
+            }));
+            if (songs.length > 0) {
+                currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
+                if (currentSongIndex >= songs.length) {
+                    currentSongIndex = 0;
+                }
+                audioPlayer.src = songs[currentSongIndex].src;
+                audioPlayer.load();
+                updatePlaylistActiveSong();
+            }
+            volumeSlider.value = localStorage.getItem('musicVolume') || 1;
+            audioPlayer.volume = volumeSlider.value;
+            isMuted = localStorage.getItem('musicMuted') === 'true';
+            audioPlayer.muted = isMuted;
+            muteBtn.textContent = isMuted ? '🔇' : '🔊';
+            isLooping = localStorage.getItem('musicLooping') === 'true';
+            if (isLooping) loopBtn.classList.add('active');
+            audioPlayer.loop = isLooping;
+            audioPlayer.addEventListener('timeupdate', updateProgressBar);
+            audioPlayer.addEventListener('ended', () => {
+                if (!isLooping) {
+                    nextSong();
+                }
+            });
+            audioPlayer.addEventListener('loadedmetadata', () => {
+                durationSpan.textContent = formatTime(audioPlayer.duration);
+            });
+            musicProgressContainer.addEventListener('click', seekMusic);
+            if (localStorage.getItem('isPlaying') === 'true' && audioPlayer.src) {
+                setTimeout(() => {
+                    playMusic().catch(e => { });
+                }, 100);
+            }
+        }
+        function toggleMusicPlayer() {
+            musicPlayer.classList.toggle('open');
+            if (musicPlayer.classList.contains('open')) {
+                showElement(musicPlayer);
+                if (!audioPlayer.src && playlistElement.children.length > 0) {
+                    audioPlayer.src = playlistElement.children[currentSongIndex].dataset.src;
+                    audioPlayer.load();
+                    updatePlaylistActiveSong();
+                }
+            } else {
+                hideElement(musicPlayer);
+            }
+        }
+        function playMusic() {
+            return audioPlayer.play().then(() => {
+                playPauseBtn.textContent = '⏸';
+                isPlaying = true;
+                localStorage.setItem('isPlaying', 'true');
+            }).catch(e => { });
+        }
+        function pauseMusic() {
+            audioPlayer.pause();
+            playPauseBtn.textContent = '▶';
+            isPlaying = false;
+            localStorage.setItem('isPlaying', 'false');
+        }
+        function togglePlayPause() {
+            if (isPlaying) {
+                pauseMusic();
+            } else {
+                playMusic();
+            }
+        }
+        function nextSong() {
+            const songs = Array.from(playlistElement.children);
+            if (songs.length === 0) return;
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            audioPlayer.src = songs[currentSongIndex].dataset.src;
+            localStorage.setItem('currentSongIndex', currentSongIndex);
+            audioPlayer.load();
+            playMusic();
+            updatePlaylistActiveSong();
+        }
+        function prevSong() {
+            const songs = Array.from(playlistElement.children);
+            if (songs.length === 0) return;
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            audioPlayer.src = songs[currentSongIndex].dataset.src;
+            localStorage.setItem('currentSongIndex', currentSongIndex);
+            audioPlayer.load();
+            playMusic();
+            updatePlaylistActiveSong();
+        }
+        function stopMusic() {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            playPauseBtn.textContent = '▶';
+            isPlaying = false;
+            localStorage.setItem('isPlaying', 'false');
+        }
+        function setVolume() {
+            audioPlayer.volume = volumeSlider.value;
+            localStorage.setItem('musicVolume', volumeSlider.value);
+            if (audioPlayer.volume === 0) {
+                audioPlayer.muted = true;
+                muteBtn.textContent = '🔇';
+                isMuted = true;
+            } else {
+                audioPlayer.muted = false;
+                muteBtn.textContent = '🔊';
+                isMuted = false;
+            }
+            localStorage.setItem('musicMuted', isMuted);
+        }
+        function toggleMute() {
+            audioPlayer.muted = !audioPlayer.muted;
+            isMuted = audioPlayer.muted;
+            muteBtn.textContent = isMuted ? '🔇' : '🔊';
+            localStorage.setItem('musicMuted', isMuted);
+            if (isMuted) {
+                volumeSlider.value = 0;
+            } else {
+                volumeSlider.value = localStorage.getItem('musicVolume') || 1;
+            }
+            audioPlayer.volume = volumeSlider.value;
+        }
+        function toggleLoop() {
+            isLooping = !isLooping;
+            audioPlayer.loop = isLooping;
+            if (isLooping) {
+                loopBtn.classList.add('active');
+            } else {
+                loopBtn.classList.remove('active');
+            }
+            localStorage.setItem('musicLooping', isLooping);
+        }
+        function updateProgressBar() {
+            const { duration, currentTime } = audioPlayer;
+            const progressPercent = (currentTime / duration) * 100;
+            musicProgressBar.style.width = `${progressPercent}%`;
+            currentTimeSpan.textContent = formatTime(currentTime);
+        }
+        function seekMusic(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audioPlayer.duration;
+            audioPlayer.currentTime = (clickX / width) * duration;
+        }
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+        function updatePlaylistActiveSong() {
+            Array.from(playlistElement.children).forEach((li, index) => {
+                if (index === currentSongIndex) {
+                    li.classList.add('active-song');
+                    li.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    li.classList.remove('active-song');
+                }
+            });
+        }
+        function startGame() {
+            if (gameRunning) {
+                stopGame();
+            }
+            gameRunning = true;
+            gameScore = 0;
+            scoreDisplay.textContent = gameScore;
+            birdPosition = 150;
+            birdGravity = 0;
+            bird.style.top = `${birdPosition}px`;
+            flappyGameContainer.innerHTML = '';
+            flappyGameContainer.appendChild(bird);
+            startGameBtn.textContent = "Restart Game";
+            gameSpeed = initialGameSpeed;
+            gameInterval = setInterval(gameLoop, 20);
+            pipeInterval = setInterval(createPipe, 1500);
+        }
+        function stopGame() {
+            clearInterval(gameInterval);
+            clearInterval(pipeInterval);
+            gameRunning = false;
+            startGameBtn.textContent = "Start Game";
+            document.querySelectorAll('.pipe').forEach(pipe => pipe.remove());
+        }
+        function closeGame() {
+            stopGame();
+            hideElement(flappyBirdContainer);
+        }
+        function gameLoop() {
+            if (!gameRunning) return;
+            birdGravity += 0.5;
+            birdPosition += birdGravity;
+            bird.style.top = `${birdPosition}px`;
+            if (birdPosition + bird.clientHeight > flappyGameContainer.clientHeight || birdPosition < 0) {
+                gameOver();
+            }
+            document.querySelectorAll('.pipe').forEach(pipe => {
+                let pipeLeft = parseFloat(pipe.style.left);
+                pipe.style.left = `${pipeLeft - gameSpeed}px`;
+                if (pipeLeft + pipe.clientWidth < 0) {
+                    pipe.remove();
+                }
+                const birdRect = bird.getBoundingClientRect();
+                const pipeRect = pipe.getBoundingClientRect();
+                const collision = (
+                    birdRect.left < pipeRect.right &&
+                    birdRect.right > pipeRect.left &&
+                    birdRect.top < pipeRect.bottom &&
+                    birdRect.bottom > pipeRect.top
+                );
+                if (collision) {
+                    gameOver();
+                }
+                if (pipe.classList.contains('bottom') && !pipe.passed && pipeRect.right < birdRect.left) {
+                    pipe.passed = true;
+                    gameScore++;
+                    scoreDisplay.textContent = gameScore;
+                    gameSpeed += 0.1;
+                }
+            });
+        }
+        function birdJump(e) {
+            if (gameRunning && (e.code === 'Space' || (e.type === 'click' && e.target.closest('#flappy-container')))) {
+                birdGravity = -10;
+                bird.classList.add('flapping');
+                setTimeout(() => bird.classList.remove('flapping'), 100);
+            }
+        }
+        function createPipe() {
+            if (!gameRunning) return;
+            const pipeWidth = 50;
+            const pipeGap = 120;
+            const minHeight = 30;
+            const containerHeight = flappyGameContainer.clientHeight;
+            const maxHeight = containerHeight - pipeGap - minHeight;
+            const topPipeHeight = Math.random() * (maxHeight - minHeight) + minHeight;
+            const bottomPipeHeight = containerHeight - topPipeHeight - pipeGap;
+            const pipeTop = document.createElement('div');
+            pipeTop.classList.add('pipe', 'top');
+            pipeTop.style.width = `${pipeWidth}px`;
+            pipeTop.style.height = `${topPipeHeight}px`;
+            pipeTop.style.left = `${flappyGameContainer.clientWidth}px`;
+            const pipeBottom = document.createElement('div');
+            pipeBottom.classList.add('pipe', 'bottom');
+            pipeBottom.style.width = `${pipeWidth}px`;
+            pipeBottom.style.height = `${bottomPipeHeight}px`;
+            pipeBottom.style.left = `${flappyGameContainer.clientWidth}px`;
+            flappyGameContainer.appendChild(pipeTop);
+            flappyGameContainer.appendChild(pipeBottom);
+        }
+        function gameOver() {
+            stopGame();
+            alert(`Game Over! Your score: ${gameScore}`);
+        }
+        function triggerConfetti() {
+            const colors = ['#ff0000', '#0000ff', '#00ff00', '#ffff00', '#ffc0cb', '#800080', '#ffa500'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.top = `${Math.random() * -10}vh`;
+                confetti.style.transform = `rotateZ(${Math.random() * 360}deg)`;
+                confetti.style.animationDuration = `${1.5 + Math.random() * 2}s`;
+                confetti.style.animationDelay = `${Math.random() * 0.5}s`;
+                document.body.appendChild(confetti);
+                confetti.addEventListener('animationend', () => {
+                    confetti.remove();
+                });
+            }
+        }
+        function printEntry() {
+            window.print();
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            setTheme(currentTheme);
+            initializeMusicPlayer();
+            showElement(authContainer);
+            hideElement(newDiaryGroup);
+            hideElement(renameInputGroup);
+            document.getElementById('font-selector').addEventListener('change', setFont);
+            startGameBtn.addEventListener('click', startGame);
+            flappyGameContainer.addEventListener('click', birdJump);
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space' && gameRunning) {
+                    e.preventDefault();
+                    birdJump(e);
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!musicPlayer.classList.contains('open')) return;
+                if (['Space', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'KeyM', 'KeyL'].includes(e.code)) {
+                    e.preventDefault();
+                }
+
+                switch (e.code) {
+                    case 'Space':
+                        togglePlayPause();
+                        break;
+                    case 'ArrowRight':
+                        if (audioPlayer.duration) {
+                            audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 5);
+                        }
+                        break;
+                    case 'ArrowLeft':
+                        if (audioPlayer.duration) {
+                            audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 5);
+                        }
+                        break;
+                    case 'ArrowUp':
+                        volumeSlider.value = Math.min(1, parseFloat(volumeSlider.value) + 0.1);
+                        setVolume();
+                        break;
+                    case 'ArrowDown':
+                        volumeSlider.value = Math.max(0, parseFloat(volumeSlider.value) - 0.1);
+                        setVolume();
+                        break;
+                    case 'KeyM':
+                        toggleMute();
+                        break;
+                    case 'KeyL':
+                        toggleLoop();
+                        break;
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.ctrlKey && event.shiftKey && event.key === 'U') {
+                    event.preventDefault();
+                    triggerConfetti();
+                }
+                if (event.ctrlKey && event.shiftKey && event.key === 'B') {
+                    event.preventDefault();
+                    if (flappyBirdContainer.classList.contains('hidden')) {
+                        showElement(flappyBirdContainer);
+                        startGame();
+                    } else {
+                        hideElement(flappyBirdContainer);
+                        stopGame();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

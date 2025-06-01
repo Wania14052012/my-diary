@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8dcdc;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            transition: background-color 0.3s ease;
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 25px;
+            background-color: rgb(235, 144, 164);
+            opacity: 0.65;
+            clip-path: polygon(53% 37%, 58% 31%, 63% 28%, 70% 28%, 74% 30%, 78% 34%, 79% 39%, 80% 44%, 80% 50%, 76% 57%, 71% 62%, 67% 67%, 61% 71%, 58% 76%, 53% 79%, 48% 77%, 44% 73%, 36% 65%, 29% 56%, 25% 48%, 25% 42%, 28% 36%, 30% 30%, 38% 30%, 44% 33%, 46% 35%);
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            margin-top: 200px;
+            max-width: 500px;
+            width: 100%;
+            height: 100%;
+            background: #ffd0d0;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input {
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #934c53e9;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e08282;
+        }
+
+        .url-item {
+            margin-bottom: 10px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: auto;
+            border: none;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #ee86a0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 2px 6px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #e6678d;
+        }
+
+        .dark-mode-toggle {
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #555;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .dark-mode .container {
+            background-color: #444;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode h1 {
+            color: #fff;
+        }
+
+        .dark-mode textarea {
+            background-color: #555;
+            border-color: #666;
+            color: #fff;
+        }
+
+        .dark-mode input {
+            background-color: #555;
+            border-color: #666;
+            color: #fff;
+        }
+
+        .dark-mode button {
+            background-color: #a35656;
+        }
+
+        .dark-mode button:hover {
+            background-color: #e08282;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .drawer {
+            overflow: scroll;
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 400px;
+            height: 100%;
+            background: #333;
+            color: white;
+            padding: 20px;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .drawer.open {
+            right: 0;
+        }
+
+        .music-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 15px;
+            background: #9c486f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            display: none;
+        }
+
+        .song-list {
+            list-style: none;
+            padding: 0;
+
+        }
+
+        .song-list li {
+            cursor: pointer;
+            margin: 10px 0;
+            padding: 5px;
+            background: #444;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .emoji-keyboard {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .emoji-keyboard button {
+            font-size: 24px;
+            background: none;
+            background-color: #a3565658;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.2s;
+        }
+
+        .emoji-keyboard button:hover {
+            transform: scale(1.2);
+        }
+
+        .now-playing {
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ffd0d0;
+        }
+
+        .custom-audio-player {
+            width: 100%;
+            margin: 20px 0;
+            background: #444;
+            border-radius: 10px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: #666;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #ffd0d0;
+            border-radius: 5px;
+            width: 0%;
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .main-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .volume-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 5px;
+            -webkit-appearance: none;
+            background: #666;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #ffd0d0;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dark-mode .custom-audio-player {
+            background: #555;
+        }
+
+        .dark-mode .progress-container {
+            background: #777;
+        }
+
+        .dark-mode .progress-bar {
+            background: #e08282;
+        }
+
+        .dark-mode .volume-slider {
+            background: #777;
+        }
+
+        .dark-mode .volume-slider::-webkit-slider-thumb {
+            background: #e08282;
+        }
+
+        .loop-btn {
+            margin-left: 10px;
+        }
+
+        .loop-btn.active {
+            color: #e08282;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="music-btn" id="musicButton" onclick="toggleDrawer()">🎶</button>
+
+    <div class="drawer" id="musicDrawer">
+        <span class="close-btn" onclick="toggleDrawer()">&times;</span>
+        <h3>💞💖 Play If You Need 💖💞</h3>
+        <div id="nowPlaying" class="now-playing">Select a song to play</div>
+
+        <div class="custom-audio-player">
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="time-display">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+            <div class="controls">
+                <div class="main-controls">
+                    <button class="control-btn" id="prevBtn">⏮</button>
+                    <button class="control-btn" id="playPauseBtn">▶</button>
+                    <button class="control-btn" id="nextBtn">⏭</button>
+                    <button class="control-btn loop-btn" id="loopBtn">🔁</button>
+                </div>
+                <div class="volume-controls">
+                    <button class="control-btn" id="muteBtn">🔊</button>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+        </div>
+
+        <audio id="audioElement"></audio>
+        <ul class="song-list" id="songList"></ul>
+    </div>
+
+
+    <div>
+        <div class="background-animation" id="animation-container"></div>
+    </div>
+
+    <div class="container">
+        <h1>My Diary</h1>
+        <div id="auth">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button onclick="authenticate()">Unlock</button>
+        </div>
+        <div id="diary" style="display: none;">
+            <textarea id="diaryContent" placeholder="Write your secrets here..."></textarea>
+
+            <div class="emoji-keyboard">
+                <button data-emoji="❤️">❤️</button>
+                <button data-emoji="😎">😎</button>
+                <button data-emoji="🥰">🥰</button>
+                <button data-emoji="😭">😭</button>
+                <button data-emoji="🤫">🤫</button>
+                <button data-emoji="🤭">🤭</button>
+                <button data-emoji="💋">💋</button>
+                <button data-emoji="😐">😐</button>
+                <button data-emoji="🤧">🤧</button>
+
+            </div>
+            <div class="emoji-keyboard">
+                <button data-emoji="😌">😌</button>
+                <button data-emoji="😜">😜</button>
+                <button data-emoji="😏">😏</button>
+                <button data-emoji="😡">😡</button>
+                <button data-emoji="🥵">🥵</button>
+                <button data-emoji="😖">😖</button>
+                <button data-emoji="🙄">🙄</button>
+                <button data-emoji="😳">😳</button>
+                <button data-emoji="😬">😬</button>
+
+            </div>
+            <button onclick="saveDiary()">Save</button>
+            <button onclick="lockDiary()">Lock</button>
+            <br>
+            <input type="text" id="urlInput" placeholder="Enter URL to save">
+            <button onclick="saveURL()">Save URL</button>
+            <div id="urlContainer"></div>
+        </div>
+    </div>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <script>
+        const PASSWORD = "parksunghoon";
+        function authenticate() {
+            const enteredPassword = document.getElementById('password').value;
+            if (enteredPassword === PASSWORD) {
+                document.getElementById('auth').style.display = 'none';
+                document.getElementById('diary').style.display = 'block';
+                document.getElementById('musicButton').style.display = 'block';
+                loadDiary();
+                loadURLs();
+            } else {
+                alert('Incorrect password!');
+            }
+        }
+
+        function saveDiary() {
+            const content = document.getElementById('diaryContent').value;
+            localStorage.setItem('secretDiary', content);
+            alert('Diary saved!');
+        }
+
+        function loadDiary() {
+            const content = localStorage.getItem('secretDiary');
+            if (content) {
+                document.getElementById('diaryContent').value = content;
+            }
+        }
+
+        function lockDiary() {
+            document.getElementById('diary').style.display = 'none';
+            document.getElementById('auth').style.display = 'block';
+            document.getElementById('password').value = '';
+            document.getElementById('musicButton').style.display = 'none';
+        }
+
+        function saveURL() {
+            const url = document.getElementById('urlInput').value;
+            if (url) {
+                let urls = JSON.parse(localStorage.getItem('savedURLs')) || [];
+                urls.push(url);
+                localStorage.setItem('savedURLs', JSON.stringify(urls));
+                loadURLs();
+                alert('URL saved!');
+                document.getElementById('urlInput').value = '';
+            } else {
+                alert('Please enter a valid URL.');
+            }
+        }
+
+        function deleteURL(index) {
+            let urls = JSON.parse(localStorage.getItem('savedURLs')) || [];
+            urls.splice(index, 1);
+            localStorage.setItem('savedURLs', JSON.stringify(urls));
+            loadURLs();
+        }
+
+        function loadURLs() {
+            const urlContainer = document.getElementById('urlContainer');
+            urlContainer.innerHTML = '';
+            const urls = JSON.parse(localStorage.getItem('savedURLs')) || [];
+            urls.forEach((url, index) => {
+                const urlItem = document.createElement('div');
+                urlItem.className = 'url-item';
+
+                if (/(jpeg|jpg|gif|png|svg|webp)$/i.test(url)) {
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.alt = 'Image preview';
+                    urlItem.appendChild(img);
+                } else {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = url;
+                    urlItem.appendChild(iframe);
+                }
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.textContent = 'X';
+                deleteBtn.onclick = () => deleteURL(index);
+
+                urlItem.appendChild(deleteBtn);
+                urlContainer.appendChild(urlItem);
+            });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.contains('dark-mode') ? document.querySelector('.dark-mode-toggle').textContent = '☀️' : document.querySelector('.dark-mode-toggle').textContent = '🌙';
+        }
+
+        function generateHearts() {
+            const container = document.getElementById('animation-container');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            container.appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(generateHearts, 800);
+
+        const songs = [
+            { name: "Love Story (fast) - Indila", src: "sounds/bgsound00.mp3" },
+            { name: "Love Story  (slowed) - Indila", src: "sounds/bgsound01.mp3" },
+            { name: "Love Story (original) - Indila", src: "sounds/bgsound02.mp3" },
+            { name: "Love Story (piano) - Indila", src: "sounds/bgsound12.mp3" },
+            { name: "Under The Influence (original) - Chris Brown", src: "sounds/bgsound03.mp3" },
+            { name: "Under The Influence (fast) - Chris Brown", src: "sounds/bgsound04.mp3" },
+            { name: "Under The Influence (slowed) - Chris Brown", src: "sounds/bgsound05.mp3" },
+            { name: "Suzumi - Radwimps", src: "sounds/bgsound06.mp3" },
+            { name: "Bad Boy - Marwa Loud", src: "sounds/bgsound07.mp3" },
+            { name: "Chuttamalle - Shilpa Rao", src: "sounds/bgsound08.mp3" },
+            { name: "I Wanna Be Yours - Artic Monkeys", src: "sounds/bgsound09.mp3" },
+            { name: "Dandalions - Ruth B.", src: "sounds/bgsound10.mp3" },
+            { name: "Strangers - Keneya Grace", src: "sounds/bgsound11.mp3" },
+            { name: "Яд - Vanna Rainelle", src: "sounds/bgsound14.mp3" },
+            { name: "YAD - Vanna Rainelle", src: "sounds/bgsound13.mp3" },
+        ];
+
+        const drawer = document.getElementById("musicDrawer");
+        const songList = document.getElementById("songList");
+        const audioElement = document.getElementById("audioElement");
+        const nowPlayingDisplay = document.getElementById("nowPlaying");
+        const musicButton = document.getElementById("musicButton");
+        const progressBar = document.getElementById("progressBar");
+        const progressContainer = document.getElementById("progressContainer");
+        const currentTimeDisplay = document.getElementById("currentTime");
+        const durationDisplay = document.getElementById("duration");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const muteBtn = document.getElementById("muteBtn");
+        const loopBtn = document.getElementById("loopBtn");
+
+        let currentSongIndex = 0;
+        let isPlaying = false;
+        let isLooping = false;
+
+        const keyActions = {
+            ' ': togglePlayPause,
+            'ArrowLeft': () => seek(-5),
+            'ArrowRight': () => seek(5),
+            'ArrowUp': () => adjustVolume(0.1),
+            'ArrowDown': () => adjustVolume(-0.1),
+            'm': toggleMute,
+            'n': nextSong,
+            'p': prevSong,
+            'l': toggleLoop,
+            'Home': () => seek(0),
+            'End': () => seek(audioElement.duration)
+        };
+
+        function handleKeyDown(e) {
+            if (!drawer.classList.contains('open')) return;
+            const key = e.key;
+            if (Object.keys(keyActions).includes(key)) {
+                e.preventDefault();
+                keyActions[key]();
+            }
+        }
+
+        function seek(seconds) {
+            if (seconds === 0) {
+                audioElement.currentTime = 0;
+            } else if (seconds === audioElement.duration) {
+                audioElement.currentTime = audioElement.duration;
+            } else {
+                audioElement.currentTime += seconds;
+            }
+            updateProgress();
+        }
+
+        function adjustVolume(change) {
+            let newVolume = audioElement.volume + change;
+            newVolume = Math.max(0, Math.min(1, newVolume));
+            audioElement.volume = newVolume;
+            volumeSlider.value = newVolume;
+            muteBtn.textContent = newVolume == 0 ? "🔇" : "🔊";
+        }
+
+        function toggleDrawer() {
+            drawer.classList.toggle("open");
+            if (drawer.classList.contains("open")) {
+                musicButton.style.backgroundColor = "#e08282";
+            } else {
+                musicButton.style.backgroundColor = "#9c486f";
+            }
+        }
+
+        function loadSongs() {
+            songList.innerHTML = '';
+            songs.forEach((song, index) => {
+                const li = document.createElement('li');
+                li.textContent = song.name;
+                li.addEventListener('click', () => {
+                    currentSongIndex = index;
+                    loadSong(currentSongIndex);
+                    playSong();
+                });
+                songList.appendChild(li);
+            });
+        }
+
+        function loadSong(index) {
+            const song = songs[index];
+            audioElement.src = song.src;
+            nowPlayingDisplay.textContent = `Now Playing: ${song.name}`;
+            const songItems = document.querySelectorAll('.song-list li');
+            songItems.forEach((item, i) => {
+                if (i === index) {
+                    item.style.background = "#9c486f";
+                    item.style.color = "white";
+                } else {
+                    item.style.background = "#444";
+                    item.style.color = "white";
+                }
+            });
+        }
+
+        function playSong() {
+            isPlaying = true;
+            audioElement.play();
+            playPauseBtn.textContent = "⏸";
+        }
+
+        function pauseSong() {
+            isPlaying = false;
+            audioElement.pause();
+            playPauseBtn.textContent = "▶";
+        }
+
+        function togglePlayPause() {
+            if (isPlaying) {
+                pauseSong();
+            } else {
+                playSong();
+            }
+        }
+
+        function prevSong() {
+            currentSongIndex--;
+            if (currentSongIndex < 0) {
+                currentSongIndex = songs.length - 1;
+            }
+            loadSong(currentSongIndex);
+            if (isPlaying) {
+                playSong();
+            }
+        }
+
+        function nextSong() {
+            currentSongIndex++;
+            if (currentSongIndex >= songs.length) {
+                currentSongIndex = 0;
+            }
+            loadSong(currentSongIndex);
+            if (isPlaying) {
+                playSong();
+            }
+        }
+
+        function toggleLoop() {
+            isLooping = !isLooping;
+            audioElement.loop = isLooping;
+            loopBtn.classList.toggle('active', isLooping);
+        }
+
+        function updateProgress() {
+            const { currentTime, duration } = audioElement;
+            const progressPercent = (currentTime / duration) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+            currentTimeDisplay.textContent = formatTime(currentTime);
+            if (duration) {
+                durationDisplay.textContent = formatTime(duration);
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        function setProgress(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audioElement.duration;
+            audioElement.currentTime = (clickX / width) * duration;
+        }
+
+        function setVolume() {
+            audioElement.volume = volumeSlider.value;
+            muteBtn.textContent = volumeSlider.value == 0 ? "🔇" : "🔊";
+        }
+
+        function toggleMute() {
+            if (audioElement.volume > 0) {
+                audioElement.volume = 0;
+                volumeSlider.value = 0;
+                muteBtn.textContent = "🔇";
+            } else {
+                audioElement.volume = 1;
+                volumeSlider.value = 1;
+                muteBtn.textContent = "🔊";
+            }
+        }
+
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        prevBtn.addEventListener('click', prevSong);
+        nextBtn.addEventListener('click', nextSong);
+        loopBtn.addEventListener('click', toggleLoop);
+        audioElement.addEventListener('timeupdate', updateProgress);
+        audioElement.addEventListener('ended', () => {
+            if (!isLooping) {
+                nextSong();
+            }
+        });
+        progressContainer.addEventListener('click', setProgress);
+        volumeSlider.addEventListener('input', setVolume);
+        muteBtn.addEventListener('click', toggleMute);
+        document.addEventListener('keydown', handleKeyDown);
+
+        loadSongs();
+        loadSong(currentSongIndex);
+
+        const emojiButtons = document.querySelectorAll('.emoji-keyboard button');
+        const textarea = document.getElementById('diaryContent');
+
+        function insertEmojiAtCursor(emoji) {
+            const startPos = textarea.selectionStart;
+            const endPos = textarea.selectionEnd;
+            const textBefore = textarea.value.substring(0, startPos);
+            const textAfter = textarea.value.substring(endPos, textarea.value.length);
+            textarea.value = textBefore + emoji + textAfter;
+            textarea.selectionStart = textarea.selectionEnd = startPos + emoji.length;
+            textarea.focus();
+        }
+
+        emojiButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const emoji = button.getAttribute('data-emoji');
+                insertEmojiAtCursor(emoji);
+            });
+        });
+    </script>
+</body>
+</html>
