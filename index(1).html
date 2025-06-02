@@ -159,7 +159,7 @@
             --editor-border: #5a504a;
             --editor-background: #3e3631;
             --editor-text: #e0d0b8;
-            background-image: url('images/old-paper-texture.png');
+            background-image: url('img.jpg');
             background-size: cover;
             background-blend-mode: multiply;
             background-attachment: fixed;
@@ -1827,7 +1827,6 @@
     <section class="container hidden" id="diary-container">
         <header class="diary-header">
             <div class="theme-selector">
-                <button class="theme-btn default-theme" onclick="setTheme('default')" title="Default Theme"></button>
                 <button class="theme-btn dark-theme" onclick="setTheme('dark')" title="Dark Mode"></button>
                 <button class="theme-btn vampire-theme-btn" onclick="setTheme('vampire')"
                     title="Vampire Theme"></button>
@@ -1900,15 +1899,19 @@
                     title="Strikethrough"><s>S</s></button>
                 <button class="rich-text-btn" onclick="formatText('hiliteColor', 'var(--highlight-color)')"
                     title="Highlight">Highlight</button>
-                <button class="rich-text-btn" onclick="formatText('insertUnorderedList')" title="Bullet List">•
-                    List</button>
-                <button class="rich-text-btn" onclick="insertImage()" title="Insert Image">🖼️ Image</button>
+                <button class="rich-text-btn" onclick="formatText('insertUnorderedList')"
+                    title="Bullet List">•List</button>
                 <button class="rich-text-btn" onclick="startVoiceInput()" title="Voice to Text">🎤 Voice</button>
+                <button class="rich-text-btn" onclick="insertImageFromURL()" title="Insert Image from URL">🖼️IMG
+                    (URL)</button>
+                <button class="rich-text-btn" onclick="insertImageFromPC()" title="Upload Image from Computer">📁IMG
+                    (PC)</button>
             </div>
             <div class="emoji-keyboard">
                 <button class="emoji-btn" onclick="insertEmoji('❤️')" title="Red Heart">❤️</button>
-                <button class="emoji-btn" onclick="insertEmoji('👀')" title="Eyes">👀</button>
+                <button class="emoji-btn" onclick="insertEmoji('💋')" title="Kiss Mark">💋</button>
                 <button class="emoji-btn" onclick="insertEmoji('✨')" title="Sparkles">✨</button>
+                <button class="emoji-btn" onclick="insertEmoji('👀')" title="Eyes">👀</button>
                 <button class="emoji-btn" onclick="insertEmoji('😊')" title="Smiling Face">😊</button>
                 <button class="emoji-btn" onclick="insertEmoji('😂')" title="Face with Tears of Joy">😂</button>
                 <button class="emoji-btn" onclick="insertEmoji('😭')" title="Loudly Crying Face">😭</button>
@@ -1918,7 +1921,6 @@
                 <button class="emoji-btn" onclick="insertEmoji('🙄')" title="Annoyed">🙄</button>
                 <button class="emoji-btn" onclick="insertEmoji('😳')" title="Awkward2">😳</button>
                 <button class="emoji-btn" onclick="insertEmoji('😬')" title="Awkward">😬</button>
-                <button class="emoji-btn" onclick="insertEmoji('💋')" title="Kiss Mark">💋</button>
                 <button class="emoji-btn" onclick="insertEmoji('😈')" title="evil face">😈</button>
                 <button class="emoji-btn" onclick="insertEmoji('🥵')" title="Hot Face">🥵</button>
                 <button class="emoji-btn" onclick="insertEmoji('😜')" title="Winking mock Face">😜</button>
@@ -2504,29 +2506,88 @@
             document.execCommand('insertText', false, emoji);
             diaryEditor.focus();
         }
-        function insertImage() {
-            const url = prompt('Enter image URL or select a file (type "file" to choose from your computer):');
+        function insertImageFromURL() {
+            const url = prompt('Enter image URL:');
             if (!url) return;
-            if (url.toLowerCase() === 'file') {
-                const input = document.createElement('input');
-                input.type = 'file';
-                input.accept = 'image/*';
-                input.onchange = (e) => {
-                    const file = e.target.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = (readerEvent) => {
-                            const base64Image = readerEvent.target.result;
-                            addImageToEditor(base64Image);
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                };
-                input.click();
-            } else {
-                addImageToEditor(url);
-            }
+            addImageToEditor(url);
             diaryEditor.focus();
+        }
+
+        function insertImageFromPC() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.multiple = false; // Change to true if you want multiple files
+
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                // Check file size (optional)
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                if (file.size > maxSize) {
+                    alert('Image is too large. Please select an image smaller than 5MB.');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (readerEvent) => {
+                    const base64Image = readerEvent.target.result;
+                    addImageToEditor(base64Image);
+                };
+                reader.readAsDataURL(file);
+            };
+
+            input.click();
+        }
+
+        function addImageToEditor(src, caption = '') {
+            const imgDiv = document.createElement('div');
+            imgDiv.classList.add('image-attachment');
+
+            const imgContainer = document.createElement('div');
+            imgContainer.classList.add('image-preview-container');
+
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Diary Image';
+
+            img.onerror = () => {
+                imgContainer.innerHTML = '<div class="broken-image-placeholder">Broken Image</div>';
+                img.src = '';
+            };
+
+            imgContainer.appendChild(img);
+
+            const captionInput = document.createElement('input');
+            captionInput.type = 'text';
+            captionInput.placeholder = 'Add a caption (optional)';
+            captionInput.value = caption;
+
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-image-btn');
+            deleteButton.innerHTML = '&times;';
+            deleteButton.onclick = () => confirmDeleteImage(imgDiv);
+
+            imgDiv.appendChild(imgContainer);
+            imgDiv.appendChild(captionInput);
+            imgDiv.appendChild(deleteButton);
+
+            imageAttachmentsContainer.appendChild(imgDiv);
+        }
+
+        function confirmDeleteImage(imgDiv) {
+            const confirmDelete = confirm('Are you sure you want to delete this image?');
+            if (confirmDelete) {
+                imgDiv.remove();
+            }
+        }
+
+        function renderImages(images) {
+            imageAttachmentsContainer.innerHTML = '';
+            images.forEach(imgData => {
+                addImageToEditor(imgData.src, imgData.caption);
+            });
         }
         function addImageToEditor(src, caption = '') {
             const imgDiv = document.createElement('div');
