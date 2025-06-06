@@ -593,23 +593,36 @@
         }
         setInterval(generateHearts, 800);
 
-        const songs = [
-            { name: "Love Story (fast) - Indila", src: "sounds/bgsound00.mp3" },
-            { name: "Love Story  (slowed) - Indila", src: "sounds/bgsound01.mp3" },
-            { name: "Love Story (original) - Indila", src: "sounds/bgsound02.mp3" },
-            { name: "Love Story (piano) - Indila", src: "sounds/bgsound12.mp3" },
-            { name: "Under The Influence (original) - Chris Brown", src: "sounds/bgsound03.mp3" },
-            { name: "Under The Influence (fast) - Chris Brown", src: "sounds/bgsound04.mp3" },
-            { name: "Under The Influence (slowed) - Chris Brown", src: "sounds/bgsound05.mp3" },
-            { name: "Suzumi - Radwimps", src: "sounds/bgsound06.mp3" },
-            { name: "Bad Boy - Marwa Loud", src: "sounds/bgsound07.mp3" },
-            { name: "Chuttamalle - Shilpa Rao", src: "sounds/bgsound08.mp3" },
-            { name: "I Wanna Be Yours - Artic Monkeys", src: "sounds/bgsound09.mp3" },
-            { name: "Dandalions - Ruth B.", src: "sounds/bgsound10.mp3" },
-            { name: "Strangers - Keneya Grace", src: "sounds/bgsound11.mp3" },
-            { name: "Яд - Vanna Rainelle", src: "sounds/bgsound14.mp3" },
-            { name: "YAD - Vanna Rainelle", src: "sounds/bgsound13.mp3" },
-        ];
+const songs = [
+    { name: "Love Story (original) - Indila", src: "sounds/bgsound01.mp3" },
+    { name: "Under The Influence (original) - Chris Brown", src: "sounds/bgsound02.mp3" },
+    { name: "Suzumi - Radwimps", src: "sounds/bgsound03.mp3" },
+    { name: "Bad Boy - Marwa Loud", src: "sounds/bgsound04.mp3" },
+    { name: "Shape of You - Ed Sheeran", src: "sounds/bgsound15.mp3" },
+    { name: "YAD - Vanna Rainelle", src: "sounds/bgsound09.mp3" },
+    { name: "Bad girls like you - tobii", src: "sounds/bgsound10.mp3" },
+    { name: "I Wanna Be Yours - Arctic Monkeys", src: "sounds/bgsound06.mp3" },
+    { name: "Dandalions - Ruth B.", src: "sounds/bgsound07.mp3" },
+    { name: "Strangers - Keneya Grace", src: "sounds/bgsound08.mp3" },
+    { name: "Hijo De La Luna - Loona", src: "sounds/bgsound17.mp3" },
+    { name: "Tears of Suzume - Radwimps", src: "sounds/bgsound18.mp3" },
+    { name: "Dark Side - NEONI", src: "sounds/bgsound11.mp3" },
+    { name: "Living Hell - Bella Poarch", src: "sounds/bgsound12.mp3" },
+    { name: "Nadaaniyan - Akshath", src: "sounds/bgsound13.mp3" },
+    { name: "Chuttamalle - Shilpa Rao", src: "sounds/bgsound05.mp3" },
+    { name: "Nia Nia - EHNA", src: "sounds/bgsound14.mp3" },
+    { name: "Jalebi Baby - Tesher", src: "sounds/bgsound16.mp3" },
+    { name: "Love Story (pianio [Soft]) - Indila", src: "sounds/exeption01.mp3" },
+    { name: "Love Story (pianio [Hard]) - Indila", src: "sounds/exeption02.mp3" },
+    { name: "Love Story (guitar) - Indila", src: "sounds/exeption05.mp3" },
+    { name: "Love Story (violen) - Indila", src: "sounds/exeption09.mp3" },
+    { name: "Love Story (instrumental) - Indila", src: "sounds/exeption10.mp3" },
+    { name: "Love Story (slowed) - Indila", src: "sounds/exeption03.mp3" },
+    { name: "Love Story (fast) - Indila", src: "sounds/exeption04.mp3" },
+    { name: "Under The Influence (fast) - Chris Brown", src: "sounds/exeption06.mp3" },
+    { name: "Under The Influence (slowed) - Chris Brown", src: "sounds/exeption07.mp3" },
+    { name: "Яд - Vanna Rainelle", src: "sounds/exeption08.mp3" }
+];
 
         const drawer = document.getElementById("musicDrawer");
         const songList = document.getElementById("songList");

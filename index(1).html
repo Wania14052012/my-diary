@@ -1987,22 +1987,39 @@
             <button class="close-music" onclick="toggleMusicPlayer()" aria-label="Close Music Player">&times;</button>
         </div>
         <ul class="playlist" id="playlist">
-            <li data-src="sounds/bgsound00.mp3">Love Story (fast)- Indila</li>
-            <li data-src="sounds/bgsound01.mp3">Love Story (slowed)- Indila</li>
-            <li data-src="sounds/bgsound02.mp3">Love Story (original) - Indila</li>
-            <li data-src="sounds/bgsound12.mp3">Love Story (piano (Hard))- Indila</li>
-            <li data-src="sounds/bgsound15.mp3">Love Story (piano (Soft))- Indila</li>
-            <li data-src="sounds/bgsound03.mp3">Under The Influence (original) - Chris Brown</li>
-            <li data-src="sounds/bgsound04.mp3">Under The Influence (fast) - Chris Brown</li>
-            <li data-src="sounds/bgsound05.mp3">Under The Influence (slowed) - Chris Brown</li>
-            <li data-src="sounds/bgsound06.mp3">Suzumi - Radwimps</li>
-            <li data-src="sounds/bgsound07.mp3">Bad Boy - Marwa Loud</li>
-            <li data-src="sounds/bgsound13.mp3">YAD - Vanna Rainelle</li>
-            <li data-src="sounds/bgsound14.mp3">Яд - Vanna Rainelle</li>
-            <li data-src="sounds/bgsound08.mp3">Chuttamalle - Shilpa Rao</li>
-            <li data-src="sounds/bgsound09.mp3">I Wanna Be Yours - Arctic Monkeys</li>
-            <li data-src="sounds/bgsound10.mp3">Dandalions - Ruth B.</li>
-            <li data-src="sounds/bgsound11.mp3">Strangers - Keneya Grace</li>
+            <h3>Original Versions (favs)</h3>
+            <li data-src="sounds/bgsound01.mp3">Love Story (original) - Indila</li>
+            <li data-src="sounds/bgsound02.mp3">Under The Influence (original) - Chris Brown</li>
+            <li data-src="sounds/bgsound03.mp3">Suzume - Radwimps</li>
+            <li data-src="sounds/bgsound04.mp3">Bad Boy - Marwa Loud</li>
+            <li data-src="sounds/bgsound15.mp3">Shape of You - Ed Sheeran</li>
+            <li data-src="sounds/bgsound09.mp3">YAD - Vanna Rainelle</li>
+            <li data-src="sounds/bgsound10.mp3">Bad Girls Like You - tobi</li>
+            <li data-src="sounds/bgsound06.mp3">I Wanna Be Yours - Arctic Monkeys</li>
+            <li data-src="sounds/bgsound07.mp3">Dandelions - Ruth B.</li>
+            <li data-src="sounds/bgsound08.mp3">Strangers - Kenya Grace</li>
+
+            <h3>Original Versions (mild)</h3>
+            <li data-src="sounds/bgsound17.mp3">Hijo De La Luna - Loona</li>
+            <li data-src="sounds/bgsound18.mp3">Tears of Suzume - Radwimps</li>
+            <li data-src="sounds/bgsound11.mp3">Dark Side - NEONI</li>
+            <li data-src="sounds/bgsound12.mp3">Living Hell - Bella Poarch</li>
+            <li data-src="sounds/bgsound13.mp3">Nadaaniyan - Akshath</li>
+            <li data-src="sounds/bgsound05.mp3">Chuttamalle - Shilpa Rao</li>
+            <li data-src="sounds/bgsound14.mp3">Nia Nia - EHNA</li>
+            <li data-src="sounds/bgsound16.mp3">Jalebi Baby - Tesher</li>
+
+            <h3>Extra Versions</h3>
+            <li data-src="sounds/exception01.mp3">Love Story (piano [Soft]) - Indila</li>
+            <li data-src="sounds/exception02.mp3">Love Story (piano [Hard]) - Indila</li>
+            <li data-src="sounds/exception05.mp3">Love Story (guitar) - Indila</li>
+            <li data-src="sounds/exception09.mp3">Love Story (violin) - Indila</li>
+            <li data-src="sounds/exception10.mp3">Love Story (instrumental) - Indila</li>
+            <li data-src="sounds/exception03.mp3">Love Story (slowed) - Indila</li>
+            <li data-src="sounds/exception04.mp3">Love Story (fast) - Indila</li>
+            <li data-src="sounds/exception06.mp3">Under The Influence (fast) - Chris Brown</li>
+            <li data-src="sounds/exception07.mp3">Under The Influence (slowed) - Chris Brown</li>
+            <li data-src="sounds/exception08.mp3">Яд - Vanna Rainelle</li>
         </ul>
         <div class="progress-container" id="music-progress-container">
             <div class="progress-bar" id="music-progress-bar"></div>
@@ -2785,6 +2802,17 @@
                 hideElement(musicPlayer);
             }
         }
+        Array.from(playlistElement.children).forEach((li, index) => {
+            li.addEventListener('click', () => {
+                currentSongIndex = index;
+                audioPlayer.src = li.dataset.src;
+                localStorage.setItem('currentSongIndex', currentSongIndex);
+                audioPlayer.load();
+                playMusic();
+                updatePlaylistActiveSong();
+            });
+        });
+
         function playMusic() {
             return audioPlayer.play().then(() => {
                 playPauseBtn.textContent = '⏸';
