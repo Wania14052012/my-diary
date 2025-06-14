@@ -1,4 +1,3 @@
-<!--
 01. Park Sunghoon (Sunghoon) – South Korean – ENHYPEN
 02. Nishimura Riki (Ni-Ki) – Japanese – ENHYPEN
 03. Hwang Hyunjin (Hyunjin) – South Korean – STRAY KIDS
@@ -31,6 +30,8 @@ my playlist :
 10. Drunk-Daze - ENHYPEN
 11. Dark Side - NEONI
 12. Chuttamalle - Shilpa Rao
+13. Shinunoga E-Wa - Fujii Kaze
+14. Lovely - Billie Eilish
 her playlist :
 1. Hijo De La Luna - Loona 
 2. Shape of You - Ed Sheeran
@@ -44,4 +45,5 @@ her playlist :
 10. Drip - baby monster
 11. Nadaaniyan - Akshath
 12. Living Hell - Bella Poarch
--->
+13. Kimi ni Todoke - Tomofumi Tanizawa
+14. In The Middle Of The Night - Elley Duhé
