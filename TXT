@@ -38,6 +38,8 @@ playlist 2:
 18. Loose - ENHYPEN
 19. Sweet Venom - ENHYPEN
 20. Polaroid Love - ENHYPEN
+21. Chaconne - ENHYPEN
+22. Head over Heels - Gun Boi Kaz
 playlist 1:
 1. Hijo De La Luna - Loona
 2. Shape of You - Ed Sheeran
@@ -59,3 +61,5 @@ playlist 1:
 18. Stuck In The Middle - baby monster
 19. BILLIONAIRE - baby monster
 20. CLIK CLAK - baby monster
+21. All Of Me - baby monster
+22. Tattoo - Gun Boi Kaz
