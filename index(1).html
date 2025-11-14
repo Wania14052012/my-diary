@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Diary</title>
+    <title>My Note Book</title>
     <link rel="icon" href="your-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,34 +102,58 @@
             cursor: url('images/blood-drop.png'), auto;
         }
 
-        body.theme-unicorn {
-            --primary-bg: #fcf4f7;
-            --secondary-bg: #e6f7ff;
-            --text-color: #6a052e;
-            --header-color: #880e4f;
-            --input-bg: #ffe0f0;
-            --input-border: #ffb3d9;
-            --button-bg: #ff80ab;
-            --button-hover-bg: #ffade5;
-            --shadow-color: rgba(255, 192, 203, 0.2);
-            --highlight-color: #d1c4e9;
-            --main-font: 'Pacifico', cursive;
-            --content-font: 'Caveat', cursive;
-            --music-player-bg: #f0f4c3;
-            --music-progress-bg: #e1bee7;
-            --music-progress-fill: #a7ffeb;
-            --music-text-color: #6a1b9a;
-            --music-control-hover: #d7ccc8;
-            --drawer-bg: #fffde7;
-            --drawer-text: #4a148c;
-            --drawer-item-bg: #f3e5f5;
-            --drawer-item-hover: #e1bee7;
-            --tag-bg: #ffafe5;
-            --tag-text: #880e4f;
-            --editor-border: #ffb3d9;
-            --editor-background: #ffe0f0;
-            --editor-text: #880e4f;
-            cursor: url('images/sparkle.png'), auto;
+        body.theme-light {
+            --primary-bg: #ffffff;
+            --secondary-bg: #ffffff;
+            --text-color: #333333;
+            --header-color: #444444;
+            --input-bg: #ffffff;
+            --input-border: #cccccc;
+            --button-bg: #4a90e2;
+            --button-hover-bg: #357abd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --highlight-color: #ffeb3b;
+            --music-player-bg: #f5f5f5;
+            --music-progress-bg: #dddddd;
+            --music-progress-fill: #4a90e2;
+            --music-text-color: #333333;
+            --music-control-hover: #cccccc;
+            --drawer-bg: #f5f5f5;
+            --drawer-text: #333333;
+            --drawer-item-bg: #ffffff;
+            --drawer-item-hover: #eeeeee;
+            --tag-bg: #e0e0e0;
+            --tag-text: #333333;
+            --editor-border: #cccccc;
+            --editor-background: #ffffff;
+            --editor-text: #333333;
+        }
+
+        body.theme-valentine {
+            --primary-bg: #f3b6d2;
+            --secondary-bg: #ffebeb;
+            --text-color: #4a4a4a;
+            --header-color: #6a052e;
+            --input-bg: #ffffff;
+            --input-border: #ffd1dc;
+            --button-bg: #d14777;
+            --button-hover-bg: #e26e95;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --highlight-color: #ffc200;
+            --music-player-bg: #ffebeb;
+            --music-progress-bg: #ffd1dc;
+            --music-progress-fill: #d14777;
+            --music-text-color: #6a052e;
+            --music-control-hover: #e26e95;
+            --drawer-bg: #f8f0f0;
+            --drawer-text: #4a4a4a;
+            --drawer-item-bg: #fff5f5;
+            --drawer-item-hover: #ffecec;
+            --tag-bg: #ffd1dc;
+            --tag-text: #6a052e;
+            --editor-border: #ffd1dc;
+            --editor-background: #ffffff;
+            --editor-text: #4a4a4a;
         }
 
         body.theme-darkacademia {
@@ -165,6 +189,7 @@
             background-attachment: fixed;
         }
 
+
         body.theme-neon {
             --primary-bg: #0d0d0d;
             --secondary-bg: #1a1a1a;
@@ -194,6 +219,60 @@
             --editor-background: #2a2a2a;
             --editor-text: #00ff00;
             text-shadow: 0 0 3px var(--text-color);
+        }
+
+        body.theme-ocean {
+            --primary-bg: #001f3f;
+            --secondary-bg: #003366;
+            --text-color: #e0f7ff;
+            --header-color: #00bfff;
+            --input-bg: #004080;
+            --input-border: #0074d9;
+            --button-bg: #0074d9;
+            --button-hover-bg: #0056b3;
+            --shadow-color: rgba(0, 123, 255, 0.3);
+            --highlight-color: #7fdbff;
+            --music-player-bg: #003366;
+            --music-progress-bg: #0074d9;
+            --music-progress-fill: #7fdbff;
+            --music-text-color: #e0f7ff;
+            --music-control-hover: #0056b3;
+            --drawer-bg: #001f3f;
+            --drawer-text: #e0f7ff;
+            --drawer-item-bg: #003366;
+            --drawer-item-hover: #004080;
+            --tag-bg: #0074d9;
+            --tag-text: #e0f7ff;
+            --editor-border: #0074d9;
+            --editor-background: #004080;
+            --editor-text: #e0f7ff;
+        }
+
+        body.theme-fire {
+            --primary-bg: #1a0000;
+            --secondary-bg: #330000;
+            --text-color: #ffcc00;
+            --header-color: #ff3300;
+            --input-bg: #4d0000;
+            --input-border: #ff3300;
+            --button-bg: #ff3300;
+            --button-hover-bg: #ff6600;
+            --shadow-color: rgba(255, 51, 0, 0.4);
+            --highlight-color: #ff9900;
+            --music-player-bg: #330000;
+            --music-progress-bg: #ff3300;
+            --music-progress-fill: #ff9900;
+            --music-text-color: #ffcc00;
+            --music-control-hover: #ff6600;
+            --drawer-bg: #1a0000;
+            --drawer-text: #ffcc00;
+            --drawer-item-bg: #330000;
+            --drawer-item-hover: #4d0000;
+            --tag-bg: #ff3300;
+            --tag-text: #1a0000;
+            --editor-border: #ff3300;
+            --editor-background: #4d0000;
+            --editor-text: #ffcc00;
         }
 
         body.theme-neon .container {
@@ -267,8 +346,7 @@
         .error-page,
         .music-player,
         .drawer,
-        .drawer2,
-        .flappy-bird {
+        .drawer2 {
             display: flex;
         }
 
@@ -311,6 +389,136 @@
             }
         }
 
+        .bat {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background-color: #333;
+            clip-path: polygon(29% 22%, 29% 22%, 29% 22%, 29% 22%, 33% 5%, 33% 5%, 33% 5%, 33% 5%, 33% 5%, 42% 21%, 42% 21%, 42% 21%, 42% 21%, 42% 21%, 54% 22%, 54% 22%, 54% 22%, 54% 22%, 54% 25%, 63% 7%, 63% 7%, 63% 7%, 63% 7%, 63% 7%, 71% 23%, 71% 23%, 71% 23%, 71% 23%, 71% 23%, 72% 39%, 72% 39%, 72% 39%, 72% 39%, 72% 39%, 59% 45%, 59% 45%, 59% 45%, 59% 45%, 59% 48%, 43% 46%, 43% 46%, 43% 46%, 43% 46%, 43% 46%, 27% 43%, 27% 43%, 27% 43%, 27% 43%, 27% 43%, 21% 30%, 21% 30%, 21% 30%, 21% 30%, 21% 30%, 25% 53%, 25% 53%, 25% 53%, 25% 53%, 25% 56%, 21% 70%, 21% 70%, 21% 70%, 21% 70%, 21% 70%, 26% 80%, 26% 80%, 26% 80%, 26% 80%, 26% 80%, 36% 82%, 36% 82%, 36% 82%, 36% 82%, 36% 82%, 49% 82%, 49% 82%, 49% 82%, 49% 82%, 49% 85%, 67% 76%, 67% 76%, 67% 76%, 67% 76%, 67% 76%, 73% 68%, 73% 68%, 73% 68%, 73% 68%, 73% 68%, 70% 54%, 70% 54%, 70% 54%, 70% 54%, 70% 54%, 77% 47%, 77% 47%, 77% 47%, 77% 47%, 77% 50%, 85% 31%, 85% 31%, 85% 31%, 85% 31%, 85% 31%, 89% 21%, 89% 21%, 89% 21%, 89% 21%, 89% 21%, 93% 35%, 93% 35%, 93% 35%, 93% 35%, 93% 35%, 97% 65%, 97% 65%, 97% 65%, 97% 65%, 97% 68%, 91% 74%, 91% 74%, 91% 74%, 91% 74%, 91% 74%, 68% 82%, 68% 82%, 68% 82%, 68% 82%, 68% 82%, 20% 51%, 20% 51%, 20% 51%, 20% 51%, 20% 51%, 12% 41%, 12% 41%, 12% 41%, 12% 41%, 12% 41%, 5% 31%, 5% 31%, 5% 31%, 5% 31%, 5% 31%, 2% 38%, 2% 38%, 2% 38%, 2% 38%, 2% 38%, 3% 51%, 3% 51%, 3% 51%, 3% 51%, 3% 51%, 4% 62%, 4% 62%, 4% 62%, 4% 62%, 4% 62%, 10% 74%, 10% 74%, 10% 74%, 10% 74%, 10% 74%, 17% 78%, 17% 78%, 17% 78%, 17% 78%, 17% 78%, 24% 80%, 24% 80%, 24% 80%, 24% 80%, 24% 80%);
+            transform-origin: center bottom;
+            animation: fly-bat linear infinite;
+            z-index: -1;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+        }
+
+        @keyframes fly-bat {
+            0% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+
+            25% {
+                transform: translateX(50px) translateY(-20px) rotate(10deg);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translateX(100px) translateY(0) rotate(0deg);
+                opacity: 0.5;
+            }
+
+            75% {
+                transform: translateX(50px) translateY(20px) rotate(-10deg);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+        }
+
+        .glitch {
+            position: absolute;
+            background-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.7), 0 0 20px 10px rgba(255, 0, 255, 0.5);
+            animation: glitch-fade 0.5s steps(1) infinite alternate;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes glitch-fade {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translate(5px, -5px) scale(1.1);
+            }
+
+            50% {
+                opacity: 0;
+                transform: translate(-5px, 5px) scale(0.9);
+            }
+
+            75% {
+                opacity: 1;
+                transform: translate(10px, 0) scale(1.05);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(0, -10px) scale(1);
+            }
+        }
+
+        .bubble {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(127, 219, 255, 0.5);
+            border-radius: 50%;
+            animation: bubble-rise 8s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes bubble-rise {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23007acc" fill-opacity="0.3" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            animation: wave-animation 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes wave-animation {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .fire-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
         ::-webkit-scrollbar {
             width: 12px;
             height: 12px;
@@ -326,25 +534,6 @@
             border-radius: 10px;
             border: 3px solid transparent;
             background-clip: content-box;
-        }
-
-        body.theme-unicorn ::-webkit-scrollbar-track {
-            background: linear-gradient(to bottom, #ffcccc, #ffe6cc, #ffffcc, #e6ffcc, #ccffff, #cce6ff, #ccccff, #ffccff);
-        }
-
-        body.theme-unicorn ::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.6);
-            border: 3px solid rgba(255, 255, 255, 0.3);
-        }
-
-        body.theme-darkacademia ::-webkit-scrollbar-thumb {
-            background-color: #5a504a;
-            border-color: #3e3631;
-        }
-
-        body.theme-neon ::-webkit-scrollbar-thumb {
-            background-color: #00ff00;
-            border-color: #1a1a1a;
         }
 
         h1,
@@ -477,8 +666,8 @@
             border: 2px solid var(--text-color);
         }
 
-        .default-theme {
-            background-color: #f8dcdc;
+        .light-theme {
+            background-color: #ffffff;
         }
 
         .dark-theme {
@@ -489,22 +678,24 @@
             background-color: #8b0000;
         }
 
-        .unicorn-theme-btn {
-            background-color: #ffafe5;
+        .valentine-theme-btn {
+            background-color: #ff69b4;
         }
 
         .darkacademia-theme-btn {
             background-color: #6a5e55;
-            background-image: url('img.jpg');
-            background-size: cover;
         }
 
         .neon-theme-btn {
             background-color: #00ff00;
         }
 
-        .valentine-theme-btn {
-            background-color: #ff69b4;
+        .ocean-theme-btn {
+            background-color: #0074d9;
+        }
+
+        .fire-theme-btn {
+            background-color: #ff3300;
         }
 
         .drawer2 {
@@ -1362,256 +1553,184 @@
             transform: scale(1.05);
         }
 
-        .flappy-bird {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 300px;
-            height: 400px;
-            background-color: #222;
-            border: 2px solid var(--neon-glow-color, #00ff00);
+        .lists-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--input-bg);
             border-radius: var(--border-radius);
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
-            z-index: 2000;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            box-sizing: border-box;
-            color: white;
+            border: 1px solid var(--input-border);
+            text-align: left;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
-        .flappy-bird .close-game {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2em;
-            cursor: pointer;
-            width: auto;
-            margin: 0;
-            z-index: 2001;
+        .list-section {
+            margin-bottom: 20px;
         }
 
-        .flappy-bird .close-game:hover {
-            color: var(--button-hover-bg);
-            transform: scale(1.1);
-        }
-
-        .score-display {
-            font-size: 1.5em;
+        .list-section h4 {
             margin-bottom: 10px;
             color: var(--header-color);
         }
 
-        .flappy-container {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(to bottom, #7ed6df, #00b894);
-            border: 1px solid #555;
-            overflow: hidden;
-            position: relative;
+        .list-item {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            background-color: var(--drawer-item-bg);
+            border-radius: 5px;
+            border: 1px solid var(--input-border);
         }
 
-        .bird {
-            position: absolute;
+        .list-item a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .list-item a:hover {
+            text-decoration: underline;
+            color: var(--button-hover-bg);
+        }
+
+        .add-item-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .add-item-form input {
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .add-item-form button {
+            width: auto;
+            min-width: 80px;
+            margin: 0;
+            padding: 8px 12px;
+            font-size: 0.9em;
+        }
+
+        .lists-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--input-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--input-border);
+            text-align: left;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .list-section {
+            margin-bottom: 20px;
+        }
+
+        .list-section h4 {
+            margin-bottom: 10px;
+            color: var(--header-color);
+        }
+
+        .list-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: var(--drawer-item-bg);
+            border-radius: 8px;
+            border: 1px solid var(--input-border);
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .list-item-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .list-item-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px solid var(--input-border);
+        }
+
+        .list-item-text {
+            flex-grow: 1;
+        }
+
+        .list-item-title {
+            font-weight: bold;
+            color: var(--header-color);
+            margin-bottom: 4px;
+        }
+
+        .list-item-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+
+        .list-item-link:hover {
+            text-decoration: underline;
+            color: var(--button-hover-bg);
+        }
+
+        .list-item-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .delete-item-btn {
+            background: var(--panic-button-bg);
+            color: white;
+            border: none;
+            border-radius: 4px;
             width: 30px;
             height: 30px;
-            background-color: yellow;
-            border-radius: 50%;
-            top: 50%;
-            left: 20%;
-            transition: background-color 0.1s linear;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.9em;
         }
 
-        .bird.flapping {
-            background-color: orange;
+        .delete-item-btn:hover {
+            background: #a71d2a;
         }
 
-        .pipe {
-            position: absolute;
-            width: 50px;
-            background-color: green;
-            border: 2px solid darkgreen;
+        .add-item-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: var(--drawer-item-bg);
+            border-radius: 8px;
         }
 
-        .pipe.bottom {
-            bottom: 0;
+        .form-row {
+            display: flex;
+            gap: 10px;
         }
 
-        .pipe.top {
-            top: 0;
+        .form-row input {
+            flex: 1;
+            margin: 0;
         }
 
-        .flappy-bird .control-btn {
-            margin-top: 15px;
-            font-size: 1.2em;
-            width: 80%;
+        .image-upload-btn {
+            width: auto;
+            min-width: 120px;
+            margin: 0;
+            padding: 8px 12px;
+            font-size: 0.9em;
+            background-color: var(--button-bg);
         }
 
-        @media print {
-            body {
-                background-color: #ffffff !important;
-                color: #000000 !important;
-                margin: 1cm !important;
-                display: block !important;
-                font-family: 'Georgia', serif !important;
-                min-height: unset !important;
-            }
-
-            .background-animation,
-            .theme-selector,
-            .diary-top-controls,
-            .search-container,
-            .prompt-container,
-            .mood-tracker,
-            .rich-text-toolbar,
-            .emoji-keyboard,
-            .tag-container .new-tag-input,
-            .tag-container .add-tag-btn,
-            .button-group button:not(.print-button),
-            #image-attachments-container .delete-image-btn,
-            #image-attachments-container input,
-            .panic-button,
-            .music-player,
-            .flappy-bird,
-            .auth-container,
-            .error-page,
-            #open-music-btn,
-            #open-sidebar-btn,
-            .drawer,
-            .rename-input-group {
-                display: none !important;
-            }
-
-            .container {
-                margin: 0 !important;
-                max-width: none !important;
-                width: auto !important;
-                box-shadow: none !important;
-                background-color: transparent !important;
-                border: none !important;
-                padding: 0 !important;
-                gap: 0 !important;
-            }
-
-            h1,
-            h3 {
-                color: #333 !important;
-                font-family: 'Times New Roman', serif !important;
-                margin-top: 20px;
-                margin-bottom: 10px;
-                page-break-after: avoid;
-            }
-
-            #diary-editor {
-                border: none !important;
-                background-color: transparent !important;
-                color: #000000 !important;
-                min-height: unset !important;
-                overflow: visible !important;
-                resize: none !important;
-                padding: 0 !important;
-                font-size: 12pt !important;
-                line-height: 1.5 !important;
-                white-space: pre-wrap;
-            }
-
-            .highlight {
-                background-color: yellow !important;
-                color: black !important;
-            }
-
-            .image-attachment {
-                border: none !important;
-                padding: 0 !important;
-                background-color: transparent !important;
-                margin: 15px auto !important;
-                page-break-inside: avoid;
-            }
-
-            .image-preview-container {
-                max-width: 100% !important;
-                height: auto !important;
-                background-color: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-            }
-
-            .image-preview-container img {
-                max-width: 100% !important;
-                height: auto !important;
-                display: block !important;
-                border: 1px solid #ccc !important;
-                box-shadow: none !important;
-            }
-
-            .tag-container {
-                background-color: transparent !important;
-                border: none !important;
-                padding: 0 !important;
-                margin-top: 10px;
-                margin-bottom: 20px;
-            }
-
-            .tag {
-                background-color: #e0e0e0 !important;
-                color: #333 !important;
-                border: 1px solid #ccc !important;
-                page-break-inside: avoid;
-            }
-        }
-
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background-color: red;
-            border-radius: 50%;
-            animation: fall 3s ease-out forwards;
-            opacity: 0;
-            z-index: 9999;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(0) rotateZ(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(100vh) rotateZ(720deg);
-                opacity: 0;
-            }
-        }
-
-        .confetti.red {
-            background-color: #e20202;
-        }
-
-        .confetti.blue {
-            background-color: #0266c4;
-        }
-
-        .confetti.green {
-            background-color: #00bd55;
-        }
-
-        .confetti.yellow {
-            background-color: #f3f322;
-        }
-
-        .confetti.pink {
-            background-color: #fa6acf;
-        }
-
-        .confetti.purple {
-            background-color: #800080;
-        }
-
-        .confetti.orange {
-            background-color: #fd820e;
+        .image-upload-btn:hover {
+            background-color: var(--button-hover-bg);
         }
 
         @media (max-width: 768px) {
@@ -1706,116 +1825,15 @@
                 gap: 8px;
             }
         }
-
-        .bat {
-            position: absolute;
-            width: 40px;
-            height: 20px;
-            background-color: #333;
-            clip-path: polygon(29% 22%, 29% 22%, 29% 22%, 29% 22%, 33% 5%, 33% 5%, 33% 5%, 33% 5%, 33% 5%, 42% 21%, 42% 21%, 42% 21%, 42% 21%, 42% 21%, 54% 22%, 54% 22%, 54% 22%, 54% 22%, 54% 25%, 63% 7%, 63% 7%, 63% 7%, 63% 7%, 63% 7%, 71% 23%, 71% 23%, 71% 23%, 71% 23%, 71% 23%, 72% 39%, 72% 39%, 72% 39%, 72% 39%, 72% 39%, 59% 45%, 59% 45%, 59% 45%, 59% 45%, 59% 48%, 43% 46%, 43% 46%, 43% 46%, 43% 46%, 43% 46%, 27% 43%, 27% 43%, 27% 43%, 27% 43%, 27% 43%, 21% 30%, 21% 30%, 21% 30%, 21% 30%, 21% 30%, 25% 53%, 25% 53%, 25% 53%, 25% 53%, 25% 56%, 21% 70%, 21% 70%, 21% 70%, 21% 70%, 21% 70%, 26% 80%, 26% 80%, 26% 80%, 26% 80%, 26% 80%, 36% 82%, 36% 82%, 36% 82%, 36% 82%, 36% 82%, 49% 82%, 49% 82%, 49% 82%, 49% 82%, 49% 85%, 67% 76%, 67% 76%, 67% 76%, 67% 76%, 67% 76%, 73% 68%, 73% 68%, 73% 68%, 73% 68%, 73% 68%, 70% 54%, 70% 54%, 70% 54%, 70% 54%, 70% 54%, 77% 47%, 77% 47%, 77% 47%, 77% 47%, 77% 50%, 85% 31%, 85% 31%, 85% 31%, 85% 31%, 85% 31%, 89% 21%, 89% 21%, 89% 21%, 89% 21%, 89% 21%, 93% 35%, 93% 35%, 93% 35%, 93% 35%, 93% 35%, 97% 65%, 97% 65%, 97% 65%, 97% 65%, 97% 68%, 91% 74%, 91% 74%, 91% 74%, 91% 74%, 91% 74%, 68% 82%, 68% 82%, 68% 82%, 68% 82%, 68% 82%, 20% 51%, 20% 51%, 20% 51%, 20% 51%, 20% 51%, 12% 41%, 12% 41%, 12% 41%, 12% 41%, 12% 41%, 5% 31%, 5% 31%, 5% 31%, 5% 31%, 5% 31%, 2% 38%, 2% 38%, 2% 38%, 2% 38%, 2% 38%, 3% 51%, 3% 51%, 3% 51%, 3% 51%, 3% 51%, 4% 62%, 4% 62%, 4% 62%, 4% 62%, 4% 62%, 10% 74%, 10% 74%, 10% 74%, 10% 74%, 10% 74%, 17% 78%, 17% 78%, 17% 78%, 17% 78%, 17% 78%, 24% 80%, 24% 80%, 24% 80%, 24% 80%, 24% 80%);
-            transform-origin: center bottom;
-            animation: fly-bat linear infinite;
-            z-index: -1;
-            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-        }
-
-        @keyframes fly-bat {
-            0% {
-                transform: translateX(0) translateY(0) rotate(0deg);
-                opacity: 0.3;
-            }
-
-            25% {
-                transform: translateX(50px) translateY(-20px) rotate(10deg);
-                opacity: 0.4;
-            }
-
-            50% {
-                transform: translateX(100px) translateY(0) rotate(0deg);
-                opacity: 0.5;
-            }
-
-            75% {
-                transform: translateX(50px) translateY(20px) rotate(-10deg);
-                opacity: 0.4;
-            }
-
-            100% {
-                transform: translateX(0) translateY(0) rotate(0deg);
-                opacity: 0.3;
-            }
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: #ff8f8f;
-            border-radius: 50%;
-            box-shadow: 0 0 5px 3px rgba(230, 230, 230, 0.8);
-            animation: twinkle-sparkle 1.5s ease-in-out infinite alternate;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        @keyframes twinkle-sparkle {
-            0% {
-                transform: scale(0.5) rotate(0deg);
-                opacity: 0.7;
-            }
-
-            50% {
-                transform: scale(1.2) rotate(45deg);
-                opacity: 1;
-                box-shadow: 0 0 10px 5px rgb(207, 176, 176);
-            }
-
-            100% {
-                transform: scale(0.5) rotate(90deg);
-                opacity: 0.7;
-            }
-        }
-
-        .glitch {
-            position: absolute;
-            background-color: rgba(0, 255, 255, 0.5);
-            box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.7), 0 0 20px 10px rgba(255, 0, 255, 0.5);
-            animation: glitch-fade 0.5s steps(1) infinite alternate;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        @keyframes glitch-fade {
-            0% {
-                opacity: 0;
-                transform: translate(0, 0) scale(1);
-            }
-
-            25% {
-                opacity: 1;
-                transform: translate(5px, -5px) scale(1.1);
-            }
-
-            50% {
-                opacity: 0;
-                transform: translate(-5px, 5px) scale(0.9);
-            }
-
-            75% {
-                opacity: 1;
-                transform: translate(10px, 0) scale(1.05);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translate(0, -10px) scale(1);
-            }
-        }
     </style>
 </head>
 
 <body>
     <div class="background-animation" id="animation-container"></div>
+    <video class="fire-video hidden" id="fire-video" loop muted>
+        <source src="fire.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <main class="container" id="auth-container">
         <h1>My Diary</h1>
         <div class="auth-wrapper">
@@ -1827,16 +1845,17 @@
     <section class="container hidden" id="diary-container">
         <header class="diary-header">
             <div class="theme-selector">
+                <button class="theme-btn light-theme" onclick="setTheme('light')" title="Light Mode"></button>
                 <button class="theme-btn dark-theme" onclick="setTheme('dark')" title="Dark Mode"></button>
                 <button class="theme-btn vampire-theme-btn" onclick="setTheme('vampire')"
                     title="Vampire Theme"></button>
-                <button class="theme-btn unicorn-theme-btn" onclick="setTheme('unicorn')"
-                    title="Unicorn Theme"></button>
+                <button class="theme-btn valentine-theme-btn" onclick="setTheme('valentine')"
+                    title="Valentine Theme"></button>
                 <button class="theme-btn darkacademia-theme-btn" onclick="setTheme('darkacademia')"
                     title="Dark Academia"></button>
                 <button class="theme-btn neon-theme-btn" onclick="setTheme('neon')" title="Neon Theme"></button>
-                <button class="theme-btn valentine-theme-btn active" onclick="setTheme('valentine')"
-                    title="Valentine Theme"></button>
+                <button class="theme-btn ocean-theme-btn" onclick="setTheme('ocean')" title="Ocean Theme"></button>
+                <button class="theme-btn fire-theme-btn" onclick="setTheme('fire')" title="Fire Theme"></button>
             </div>
         </header>
         <article class="main-editor-area">
@@ -1859,10 +1878,6 @@
                     <input type="text" id="search-input" placeholder="Search entries...">
                     <button onclick="searchEntries()">Search</button>
                 </div>
-            </div>
-            <div class="prompt-container hidden" id="prompt-container">
-                <div class="prompt-text" id="daily-prompt">Your daily prompt will appear here!</div>
-                <button onclick="hidePrompt()">Hide Prompt</button>
             </div>
             <div class="mood-tracker">
                 <h3>Today's Mood</h3>
@@ -1943,10 +1958,64 @@
             <div class="button-group">
                 <button onclick="saveDiary()">Save Entry</button>
                 <button onclick="lockDiary()">Lock Diary</button>
-                <button onclick="showPrompt()" id="prompt-button">Get Prompt</button>
-                <button class="print-button" onclick="printEntry()">Print</button>
             </div>
             <div id="image-attachments-container"></div>
+            <div class="lists-container">
+                <div class="list-section">
+                    <h4>Manhwa Reading List</h4>
+                    <div id="manhwa-list"></div>
+                    <div class="add-item-form">
+                        <div class="form-row">
+                            <input type="text" id="new-manhwa-title" placeholder="Manhwa title">
+                            <input type="text" id="new-manhwa-link" placeholder="Link (optional)">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="new-manhwa-image" placeholder="Image URL (optional)" readonly>
+                            <button class="image-upload-btn" onclick="uploadImage('manhwa')">Upload Image</button>
+                            <input type="file" id="manhwa-image-upload" accept="image/*" style="display: none;"
+                                onchange="handleImageUpload(this, 'manhwa')">
+                        </div>
+                        <button onclick="addManhwa()">Add Manhwa</button>
+                    </div>
+                </div>
+
+                <div class="list-section">
+                    <h4>Books Reading List</h4>
+                    <div id="books-list"></div>
+                    <div class="add-item-form">
+                        <div class="form-row">
+                            <input type="text" id="new-book-title" placeholder="Book title">
+                            <input type="text" id="new-book-link" placeholder="Link (optional)">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="new-book-image" placeholder="Image URL (optional)" readonly>
+                            <button class="image-upload-btn" onclick="uploadImage('book')">Upload Image</button>
+                            <input type="file" id="book-image-upload" accept="image/*" style="display: none;"
+                                onchange="handleImageUpload(this, 'book')">
+                        </div>
+                        <button onclick="addBook()">Add Book</button>
+                    </div>
+                </div>
+
+                <div class="list-section">
+                    <h4>K-Pop MVs Watching List</h4>
+                    <div id="mv-list"></div>
+                    <div class="add-item-form">
+                        <div class="form-row">
+                            <input type="text" id="new-mv-title" placeholder="MV title">
+                            <input type="text" id="new-mv-link" placeholder="Link (optional)">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="new-mv-image" placeholder="Image URL (optional)" readonly>
+                            <button class="image-upload-btn" onclick="uploadImage('mv')">Upload Image</button>
+                            <input type="file" id="mv-image-upload" accept="image/*" style="display: none;"
+                                onchange="handleImageUpload(this, 'mv')">
+                        </div>
+                        <button onclick="addMV()">Add MV</button>
+                    </div>
+                </div>
+            </div>
+            </div>
         </article>
     </section>
     <aside class="drawer2 hidden" id="diary-sidebar">
@@ -1995,19 +2064,21 @@
             <li data-src="sounds/bgsound05.mp3">YAD - Vanna Rainelle</li>
             <li data-src="sounds/bgsound06.mp3">Shape of You - Ed Sheeran</li>
             <li data-src="sounds/bgsound07.mp3">Sahiba - Aditya Rikhari</li>
-            <li data-src="sounds/bgsound08.mp3">Mood - 24kGolden ft. Iann Dior</li>
+            <li data-src="sounds/bgsound19.mp3">Collide - Justine Skye</li>
+            <li data-src="sounds/bgsound18.mp3">Havana - Camila Cabello</li>
 
             <h3>Original Versions (mild)</h3>
+            <li data-src="sounds/bgsound08.mp3">Mood - 24kGolden ft. Iann Dior</li>
             <li data-src="sounds/bgsound09.mp3">Chuttamalle - Shilpa Rao</li>
             <li data-src="sounds/bgsound10.mp3">Bad Girls Like You - tobi</li>
-            <li data-src="sounds/bgsound11.mp3">I Wanna Be Yours - Arctic Monkeys</li>
+            <li data-src="sounds/bgsound11.mp3">I Wanna Be Yours - Arctic Monkey</li>
             <li data-src="sounds/bgsound12.mp3">Dandelions - Ruth B.</li>
             <li data-src="sounds/bgsound13.mp3">Nadaaniyan - Akshath</li>
-            <li data-src="sounds/bgsound14.mp3">Lovely - Billie Eilish</li>
+            <li data-src="sounds/bgsound14.mp3">Parano - DDB & Frozy</li>
             <li data-src="sounds/bgsound15.mp3">Strangers - Kenya Grace</li>
             <li data-src="sounds/bgsound16.mp3">Shinunoga E-Wa - Fujii Kaze</li>
-            <li data-src="sounds/bgsound17.mp3">Kutty story - Master</li>
-            <li data-src="sounds/bgsound18.mp3">Head over Heels - Gun Boi Kaz</li>
+            <li data-src="sounds/bgsound17.mp3">Obhodro Prem - Salman Muktadi</li>
+            <li data-src="sounds/bgsound20.mp3">SAD GIRLZ LUV MONEY - Amaarae</li>
 
             <h3>Extra Versions</h3>
             <li data-src="sounds/exception01.mp3">Sahiba (slowed) - Aditya Rikhari</li>
@@ -2043,14 +2114,6 @@
     </div>
     <button id="open-music-btn" class="hidden" onclick="toggleMusicPlayer()" aria-label="Open Music Player">🎶</button>
     <button id="open-sidebar-btn" class="hidden" onclick="toggleSidebar()" aria-label="Open Diary List">📖</button>
-    <div class="flappy-bird hidden" id="flappy-bird">
-        <button class="close-game" onclick="closeGame()" aria-label="Close Game">&times;</button>
-        <div class="score-display">Score: <span id="score">0</span></div>
-        <div class="flappy-container" id="flappy-container">
-            <div class="bird" id="bird"></div>
-        </div>
-        <button class="control-btn" onclick="startGame()" id="start-game-btn">Start Game</button>
-    </div>
 
     <script>
         const authContainer = document.getElementById('auth-container');
@@ -2061,6 +2124,7 @@
         const diaryEditor = document.getElementById('diary-editor');
         const themeButtons = document.querySelectorAll('.theme-btn');
         const animationContainer = document.getElementById('animation-container');
+        const fireVideo = document.getElementById('fire-video');
         const diarySelector = document.getElementById('diary-selector');
         const renameDiaryBtn = document.getElementById('rename-diary-btn');
         const deleteDiaryBtn = document.getElementById('delete-diary-btn');
@@ -2072,8 +2136,6 @@
         const diaryList = document.getElementById('diary-list');
         const sidebarSearchInput = document.getElementById('sidebar-search-input');
         const moodOptions = document.querySelectorAll('.mood-option');
-        const dailyPromptDiv = document.getElementById('daily-prompt');
-        const promptContainer = document.getElementById('prompt-container');
         const newTagInput = document.getElementById('new-tag-input');
         const tagContainer = document.getElementById('tag-container');
         const imageAttachmentsContainer = document.getElementById('image-attachments-container');
@@ -2090,53 +2152,34 @@
         const loopBtn = document.getElementById('loop-btn');
         const openMusicBtn = document.getElementById('open-music-btn');
         const panicButton = document.querySelector('.panic-button');
-        const flappyBirdContainer = document.getElementById('flappy-bird');
-        const flappyGameContainer = document.getElementById('flappy-container');
-        const bird = document.getElementById('bird');
-        const scoreDisplay = document.getElementById('score');
-        const startGameBtn = document.getElementById('start-game-btn');
         const sidebar = document.getElementById('diary-sidebar');
         const openSidebarBtn = document.getElementById('open-sidebar-btn');
-        const SECRET_PASSWORD = "parksunghoon";
+        const manhwaList = document.getElementById('manhwa-list');
+        const booksList = document.getElementById('books-list');
+        const mvList = document.getElementById('mv-list');
+
+        const SECRET_PASSWORD = "enhypen_sunghoon_pinnacle_raiyan";
         const DECOY_PASSWORD = "heywani12345";
         let currentDiaryId = 'main';
         let diaries = {};
-        let currentTheme = localStorage.getItem('diaryTheme') || 'valentine';
+        let currentTheme = localStorage.getItem('diaryTheme') || 'light';
         let currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
         let isPlaying = false;
         let isMuted = false;
         let isLooping = false;
-        let gameInterval = null;
-        let pipeInterval = null;
-        let birdGravity = 0;
-        let birdPosition = 150;
-        let gameScore = 0;
-        let gameRunning = false;
-        const initialGameSpeed = 2;
-        let gameSpeed = initialGameSpeed;
-        const dailyPrompts = [
-            "What's one small thing that made you smile today?",
-            "If your day were a song, what would it be and why?",
-            "Describe a moment when you felt truly inspired.",
-            "What challenge did you overcome today, no matter how small?",
-            "Write about a dream you had recently.",
-            "What are you looking forward to most in the next week?",
-            "If you could have a superpower for a day, what would it be?",
-            "What is a personal goal you're currently working towards?",
-            "Describe a place that feels like 'home' to you.",
-            "What's a piece of advice you'd give your past self?",
-            "What are three things you are grateful for right now?",
-            "Write about a new skill or hobby you'd like to learn.",
-            "If you could travel anywhere in the world, where would you go?",
-            "Are you afraid of something? If so, what is it and why?",
-        ];
+
         function getTodayDate() {
             return new Date().toISOString().slice(0, 10);
         }
+
         function saveData() {
             localStorage.setItem('diaries', JSON.stringify(diaries));
             localStorage.setItem('currentDiaryId', currentDiaryId);
+            localStorage.setItem('manhwaList', JSON.stringify(getManhwaList()));
+            localStorage.setItem('booksList', JSON.stringify(getBooksList()));
+            localStorage.setItem('mvList', JSON.stringify(getMvList()));
         }
+
         function loadData() {
             const storedDiaries = localStorage.getItem('diaries');
             if (storedDiaries) {
@@ -2146,7 +2189,6 @@
                     'main': {
                         name: 'My Main Diary',
                         entries: {},
-                        lastPromptDate: null,
                         moods: {}
                     }
                 };
@@ -2155,18 +2197,21 @@
             if (!diaries[currentDiaryId] || Object.keys(diaries).length === 0) {
                 currentDiaryId = Object.keys(diaries)[0] || 'main';
                 if (!diaries[currentDiaryId]) {
-                    diaries['main'] = { name: 'My Main Diary', entries: {}, lastPromptDate: null, moods: {} };
+                    diaries['main'] = { name: 'My Main Diary', entries: {}, moods: {} };
                     currentDiaryId = 'main';
                 }
             }
             saveData();
         }
+
         function showElement(element) {
             element.classList.remove('hidden');
         }
+
         function hideElement(element) {
             element.classList.add('hidden');
         }
+
         function authenticate() {
             const enteredPassword = passwordInput.value;
             if (enteredPassword === SECRET_PASSWORD) {
@@ -2178,6 +2223,7 @@
             }
             passwordInput.value = '';
         }
+
         function loginSuccess() {
             hideElement(authContainer);
             showElement(diaryContainer);
@@ -2186,13 +2232,16 @@
             showElement(panicButton);
             loadDiaryContent();
             loadDiaryList();
+            loadLists();
             setTheme(currentTheme);
         }
+
         function loginDecoy() {
             hideElement(authContainer);
             showElement(fakeDiaryContainer);
             hideElement(panicButton);
         }
+
         function lockDiary() {
             hideElement(diaryContainer);
             hideElement(fakeDiaryContainer);
@@ -2200,34 +2249,34 @@
             hideElement(musicPlayer);
             hideElement(openMusicBtn);
             hideElement(openSidebarBtn);
-            hideElement(flappyBirdContainer);
             hideElement(sidebar);
             hideElement(panicButton);
             showElement(authContainer);
             passwordInput.value = '';
             stopMusic();
-            stopGame();
             hideElement(renameInputGroup);
             hideElement(newDiaryGroup);
             renameDiaryBtn.textContent = 'Rename Diary';
         }
+
         function setTheme(themeName) {
             const body = document.body;
             body.className = '';
-            if (themeName !== 'default') {
+            if (themeName !== 'light') {
                 body.classList.add(`theme-${themeName}`);
             }
             localStorage.setItem('diaryTheme', themeName);
             currentTheme = themeName;
 
             themeButtons.forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.querySelector(`.theme-btn.${themeName}-theme-btn`) || document.querySelector(`.theme-btn.default-theme`);
+            const activeBtn = document.querySelector(`.theme-btn.${themeName}-theme-btn`) || document.querySelector(`.theme-btn.light-theme`);
             if (activeBtn) {
                 activeBtn.classList.add('active');
             }
 
             animationContainer.innerHTML = '';
             hideElement(animationContainer);
+            hideElement(fireVideo);
 
             if (themeName === 'valentine') {
                 for (let i = 0; i < 15; i++) {
@@ -2252,18 +2301,6 @@
                     animationContainer.appendChild(bat);
                 }
                 showElement(animationContainer);
-            } else if (themeName === 'unicorn') {
-                for (let i = 0; i < 20; i++) {
-                    const sparkle = document.createElement('div');
-                    sparkle.classList.add('sparkle');
-                    sparkle.style.left = `${Math.random() * 100}vw`;
-                    sparkle.style.top = `${Math.random() * 100}vh`;
-                    sparkle.style.animationDuration = `${1 + Math.random() * 2}s`;
-                    sparkle.style.animationDelay = `${Math.random() * 1}s`;
-                    sparkle.style.opacity = `${0.7 + Math.random() * 0.3}`;
-                    animationContainer.appendChild(sparkle);
-                }
-                showElement(animationContainer);
             } else if (themeName === 'neon') {
                 for (let i = 0; i < 25; i++) {
                     const glitch = document.createElement('div');
@@ -2278,10 +2315,28 @@
                     animationContainer.appendChild(glitch);
                 }
                 showElement(animationContainer);
+            } else if (themeName === 'ocean') {
+                for (let i = 0; i < 20; i++) {
+                    const bubble = document.createElement('div');
+                    bubble.classList.add('bubble');
+                    bubble.style.left = `${Math.random() * 100}vw`;
+                    bubble.style.animationDuration = `${5 + Math.random() * 10}s`;
+                    bubble.style.animationDelay = `${Math.random() * 5}s`;
+                    bubble.style.opacity = `${0.5 + Math.random() * 0.5}`;
+                    animationContainer.appendChild(bubble);
+                }
+                const wave = document.createElement('div');
+                wave.classList.add('wave');
+                animationContainer.appendChild(wave);
+                showElement(animationContainer);
+            } else if (themeName === 'fire') {
+                showElement(fireVideo);
+                fireVideo.play().catch(e => console.log("Video autoplay prevented:", e));
             }
             diaryEditor.style.fontFamily = getComputedStyle(document.body).getPropertyValue('--content-font') || 'Arial', 'sans-serif';
             document.getElementById('font-selector').value = diaryEditor.style.fontFamily;
         }
+
         function filterDiaryList() {
             const searchTerm = sidebarSearchInput.value.toLowerCase();
             const items = diaryList.querySelectorAll('li');
@@ -2293,6 +2348,7 @@
                 }
             });
         }
+
         function loadDiaryList() {
             diarySelector.innerHTML = '';
             diaryList.innerHTML = '';
@@ -2325,6 +2381,7 @@
             hideElement(renameInputGroup);
             renameDiaryBtn.textContent = 'Rename Diary';
         }
+
         function loadSelectedDiary() {
             const selectedValue = diarySelector.value;
             if (selectedValue === 'new') {
@@ -2341,6 +2398,7 @@
                 renameDiaryBtn.textContent = 'Rename Diary';
             }
         }
+
         function createNewDiary() {
             const newName = newDiaryNameInput.value.trim();
             if (!newName) {
@@ -2352,7 +2410,7 @@
                 return;
             }
             const newId = `diary-${Date.now()}`;
-            diaries[newId] = { name: newName, entries: {}, lastPromptDate: null, moods: {} };
+            diaries[newId] = { name: newName, entries: {}, moods: {} };
             currentDiaryId = newId;
             newDiaryNameInput.value = '';
             hideElement(newDiaryGroup);
@@ -2361,8 +2419,9 @@
             loadDiaryList();
             alert(`Diary "${newName}" created!`);
         }
+
         function createNewDiaryFromSidebar() {
-            const newName = newDiaryNameSidebarInput.value.trim();
+            const newName = document.getElementById('new-diary-name-sidebar').value.trim();
             if (!newName) {
                 alert('Please enter a name for the new diary.');
                 return;
@@ -2372,14 +2431,15 @@
                 return;
             }
             const newId = `diary-${Date.now()}`;
-            diaries[newId] = { name: newName, entries: {}, lastPromptDate: null, moods: {} };
+            diaries[newId] = { name: newName, entries: {}, moods: {} };
             currentDiaryId = newId;
-            newDiaryNameSidebarInput.value = '';
+            document.getElementById('new-diary-name-sidebar').value = '';
             saveData();
             loadDiaryContent();
             loadDiaryList();
             alert(`Diary "${newName}" created!`);
         }
+
         function toggleRenameInput() {
             if (renameInputGroup.classList.contains('hidden')) {
                 hideElement(newDiaryGroup);
@@ -2391,6 +2451,7 @@
                 renameDiaryBtn.textContent = 'Rename Diary';
             }
         }
+
         function applyRename() {
             const newName = renameDiaryInput.value.trim();
             if (!newName) {
@@ -2408,6 +2469,7 @@
             renameDiaryBtn.textContent = 'Rename Diary';
             alert(`Diary renamed to "${newName}"!`);
         }
+
         function deleteDiary() {
             if (Object.keys(diaries).length === 1) {
                 alert("You cannot delete your last diary. Please create a new one first if you wish to replace it.");
@@ -2420,7 +2482,7 @@
                 if (diaryIds.length > 0) {
                     currentDiaryId = diaryIds[0];
                 } else {
-                    diaries['main'] = { name: 'My Main Diary', entries: {}, lastPromptDate: null, moods: {} };
+                    diaries['main'] = { name: 'My Main Diary', entries: {}, moods: {} };
                     currentDiaryId = 'main';
                 }
                 saveData();
@@ -2429,6 +2491,7 @@
                 alert('Diary deleted successfully.');
             }
         }
+
         function toggleSidebar() {
             sidebar.classList.toggle('open');
             if (sidebar.classList.contains('open')) {
@@ -2437,6 +2500,15 @@
                 hideElement(sidebar);
             }
         }
+
+        function selectDiary(id) {
+            currentDiaryId = id;
+            saveData();
+            loadDiaryContent();
+            loadDiaryList();
+            toggleSidebar();
+        }
+
         function loadDiaryContent() {
             const today = getTodayDate();
             const currentEntry = diaries[currentDiaryId].entries[today];
@@ -2454,6 +2526,7 @@
             diaryEditor.style.fontFamily = getComputedStyle(document.body).getPropertyValue('--content-font') || 'Arial', 'sans-serif';
             document.getElementById('font-selector').value = diaryEditor.style.fontFamily;
         }
+
         function saveDiary() {
             const today = getTodayDate();
             const content = diaryEditor.innerHTML;
@@ -2475,6 +2548,7 @@
             saveData();
             alert('Diary entry saved!');
         }
+
         function searchEntries() {
             const searchTerm = document.getElementById('search-input').value.toLowerCase();
             const entries = diaries[currentDiaryId].entries;
@@ -2495,6 +2569,7 @@
                 alert('No entries found matching your search.');
             }
         }
+
         function formatText(command, value = null) {
             if (command === 'highlight') {
                 const selection = window.getSelection();
@@ -2512,15 +2587,18 @@
             }
             diaryEditor.focus();
         }
+
         function setFont() {
             const font = document.getElementById('font-selector').value;
             document.execCommand('fontName', false, font);
             diaryEditor.focus();
         }
+
         function insertEmoji(emoji) {
             document.execCommand('insertText', false, emoji);
             diaryEditor.focus();
         }
+
         function insertImageFromURL() {
             const url = prompt('Enter image URL:');
             if (!url) return;
@@ -2532,19 +2610,9 @@
             const input = document.createElement('input');
             input.type = 'file';
             input.accept = 'image/*';
-            input.multiple = false; // Change to true if you want multiple files
-
             input.onchange = (e) => {
                 const file = e.target.files[0];
                 if (!file) return;
-
-                // Check file size (optional)
-                const maxSize = 5 * 1024 * 1024; // 5MB
-                if (file.size > maxSize) {
-                    alert('Image is too large. Please select an image smaller than 5MB.');
-                    return;
-                }
-
                 const reader = new FileReader();
                 reader.onload = (readerEvent) => {
                     const base64Image = readerEvent.target.result;
@@ -2552,58 +2620,9 @@
                 };
                 reader.readAsDataURL(file);
             };
-
             input.click();
         }
 
-        function addImageToEditor(src, caption = '') {
-            const imgDiv = document.createElement('div');
-            imgDiv.classList.add('image-attachment');
-
-            const imgContainer = document.createElement('div');
-            imgContainer.classList.add('image-preview-container');
-
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = 'Diary Image';
-
-            img.onerror = () => {
-                imgContainer.innerHTML = '<div class="broken-image-placeholder">Broken Image</div>';
-                img.src = '';
-            };
-
-            imgContainer.appendChild(img);
-
-            const captionInput = document.createElement('input');
-            captionInput.type = 'text';
-            captionInput.placeholder = 'Add a caption (optional)';
-            captionInput.value = caption;
-
-            const deleteButton = document.createElement('button');
-            deleteButton.classList.add('delete-image-btn');
-            deleteButton.innerHTML = '&times;';
-            deleteButton.onclick = () => confirmDeleteImage(imgDiv);
-
-            imgDiv.appendChild(imgContainer);
-            imgDiv.appendChild(captionInput);
-            imgDiv.appendChild(deleteButton);
-
-            imageAttachmentsContainer.appendChild(imgDiv);
-        }
-
-        function confirmDeleteImage(imgDiv) {
-            const confirmDelete = confirm('Are you sure you want to delete this image?');
-            if (confirmDelete) {
-                imgDiv.remove();
-            }
-        }
-
-        function renderImages(images) {
-            imageAttachmentsContainer.innerHTML = '';
-            images.forEach(imgData => {
-                addImageToEditor(imgData.src, imgData.caption);
-            });
-        }
         function addImageToEditor(src, caption = '') {
             const imgDiv = document.createElement('div');
             imgDiv.classList.add('image-attachment');
@@ -2630,12 +2649,14 @@
             imgDiv.appendChild(deleteButton);
             imageAttachmentsContainer.appendChild(imgDiv);
         }
+
         function renderImages(images) {
             imageAttachmentsContainer.innerHTML = '';
             images.forEach(imgData => {
                 addImageToEditor(imgData.src, imgData.caption);
             });
         }
+
         function startVoiceInput() {
             if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
                 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -2666,6 +2687,7 @@
                 alert('Your browser does not support Web Speech API. Try Chrome or Edge.');
             }
         }
+
         function selectMood(mood) {
             moodOptions.forEach(option => {
                 if (option.dataset.mood === String(mood)) {
@@ -2675,26 +2697,11 @@
                 }
             });
         }
+
         function setMood(mood) {
             selectMood(mood);
         }
-        function showPrompt() {
-            const today = getTodayDate();
-            let currentDiary = diaries[currentDiaryId];
-            if (currentDiary.lastPromptDate === today && currentDiary.todayPrompt) {
-                dailyPromptDiv.textContent = currentDiary.todayPrompt;
-            } else {
-                const randomIndex = Math.floor(Math.random() * dailyPrompts.length);
-                dailyPromptDiv.textContent = dailyPrompts[randomIndex];
-                currentDiary.lastPromptDate = today;
-                currentDiary.todayPrompt = dailyPrompts[randomIndex];
-                saveData();
-            }
-            showElement(promptContainer);
-        }
-        function hidePrompt() {
-            hideElement(promptContainer);
-        }
+
         function addTag() {
             const tagText = newTagInput.value.trim();
             if (tagText) {
@@ -2712,6 +2719,7 @@
                 tagDiv.querySelector('.tag-remove').onclick = () => tagDiv.remove();
             }
         }
+
         function renderTags(tags) {
             Array.from(tagContainer.children).forEach(child => {
                 if (!child.classList.contains('new-tag-input') && !child.classList.contains('add-tag-btn')) {
@@ -2726,6 +2734,7 @@
                 tagDiv.querySelector('.tag-remove').onclick = () => tagDiv.remove();
             });
         }
+
         function showErrorPage() {
             hideElement(authContainer);
             hideElement(diaryContainer);
@@ -2733,22 +2742,22 @@
             hideElement(musicPlayer);
             hideElement(openMusicBtn);
             hideElement(openSidebarBtn);
-            hideElement(flappyBirdContainer);
             hideElement(sidebar);
             hideElement(panicButton);
             showElement(errorPage);
             stopMusic();
-            stopGame();
             hideElement(renameInputGroup);
             hideElement(newDiaryGroup);
             renameDiaryBtn.textContent = 'Rename Diary';
         }
+
         function goToSafeMode() {
             hideElement(errorPage);
             showElement(authContainer);
             showElement(panicButton);
             passwordInput.value = '';
         }
+
         function initializeMusicPlayer() {
             const songs = Array.from(playlistElement.children).map(li => ({
                 title: li.textContent,
@@ -2787,6 +2796,7 @@
                 }, 100);
             }
         }
+
         function toggleMusicPlayer() {
             musicPlayer.classList.toggle('open');
             if (musicPlayer.classList.contains('open')) {
@@ -2800,6 +2810,7 @@
                 hideElement(musicPlayer);
             }
         }
+
         Array.from(playlistElement.children).forEach((li, index) => {
             li.addEventListener('click', () => {
                 currentSongIndex = index;
@@ -2818,12 +2829,14 @@
                 localStorage.setItem('isPlaying', 'true');
             }).catch(e => { });
         }
+
         function pauseMusic() {
             audioPlayer.pause();
             playPauseBtn.textContent = '▶';
             isPlaying = false;
             localStorage.setItem('isPlaying', 'false');
         }
+
         function togglePlayPause() {
             if (isPlaying) {
                 pauseMusic();
@@ -2831,6 +2844,7 @@
                 playMusic();
             }
         }
+
         function nextSong() {
             const songs = Array.from(playlistElement.children);
             if (songs.length === 0) return;
@@ -2841,6 +2855,7 @@
             playMusic();
             updatePlaylistActiveSong();
         }
+
         function prevSong() {
             const songs = Array.from(playlistElement.children);
             if (songs.length === 0) return;
@@ -2851,6 +2866,7 @@
             playMusic();
             updatePlaylistActiveSong();
         }
+
         function stopMusic() {
             audioPlayer.pause();
             audioPlayer.currentTime = 0;
@@ -2858,6 +2874,7 @@
             isPlaying = false;
             localStorage.setItem('isPlaying', 'false');
         }
+
         function setVolume() {
             audioPlayer.volume = volumeSlider.value;
             localStorage.setItem('musicVolume', volumeSlider.value);
@@ -2872,6 +2889,7 @@
             }
             localStorage.setItem('musicMuted', isMuted);
         }
+
         function toggleMute() {
             audioPlayer.muted = !audioPlayer.muted;
             isMuted = audioPlayer.muted;
@@ -2884,6 +2902,7 @@
             }
             audioPlayer.volume = volumeSlider.value;
         }
+
         function toggleLoop() {
             isLooping = !isLooping;
             audioPlayer.loop = isLooping;
@@ -2894,23 +2913,27 @@
             }
             localStorage.setItem('musicLooping', isLooping);
         }
+
         function updateProgressBar() {
             const { duration, currentTime } = audioPlayer;
             const progressPercent = (currentTime / duration) * 100;
             musicProgressBar.style.width = `${progressPercent}%`;
             currentTimeSpan.textContent = formatTime(currentTime);
         }
+
         function seekMusic(e) {
             const width = this.clientWidth;
             const clickX = e.offsetX;
             const duration = audioPlayer.duration;
             audioPlayer.currentTime = (clickX / width) * duration;
         }
+
         function formatTime(time) {
             const minutes = Math.floor(time / 60);
             const seconds = Math.floor(time % 60);
             return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
         }
+
         function updatePlaylistActiveSong() {
             Array.from(playlistElement.children).forEach((li, index) => {
                 if (index === currentSongIndex) {
@@ -2921,120 +2944,180 @@
                 }
             });
         }
-        function startGame() {
-            if (gameRunning) {
-                stopGame();
-            }
-            gameRunning = true;
-            gameScore = 0;
-            scoreDisplay.textContent = gameScore;
-            birdPosition = 150;
-            birdGravity = 0;
-            bird.style.top = `${birdPosition}px`;
-            flappyGameContainer.innerHTML = '';
-            flappyGameContainer.appendChild(bird);
-            startGameBtn.textContent = "Restart Game";
-            gameSpeed = initialGameSpeed;
-            gameInterval = setInterval(gameLoop, 20);
-            pipeInterval = setInterval(createPipe, 1500);
+
+        // Lists Management Functions
+        function createListItem(item, type, index) {
+            const listItem = document.createElement('div');
+            listItem.classList.add('list-item');
+
+            listItem.innerHTML = `
+        <div class="list-item-content">
+            ${item.image ? `<img src="${item.image}" alt="${item.title}" class="list-item-image">` : ''}
+            <div class="list-item-text">
+                <div class="list-item-title">${item.title}</div>
+                ${item.link ? `<a href="${item.link}" target="_blank" class="list-item-link">${item.link}</a>` : ''}
+            </div>
+        </div>
+        <div class="list-item-actions">
+            <button class="delete-item-btn" onclick="deleteListItem('${type}', ${index})">&times;</button>
+        </div>
+    `;
+
+            return listItem;
         }
-        function stopGame() {
-            clearInterval(gameInterval);
-            clearInterval(pipeInterval);
-            gameRunning = false;
-            startGameBtn.textContent = "Start Game";
-            document.querySelectorAll('.pipe').forEach(pipe => pipe.remove());
-        }
-        function closeGame() {
-            stopGame();
-            hideElement(flappyBirdContainer);
-        }
-        function gameLoop() {
-            if (!gameRunning) return;
-            birdGravity += 0.5;
-            birdPosition += birdGravity;
-            bird.style.top = `${birdPosition}px`;
-            if (birdPosition + bird.clientHeight > flappyGameContainer.clientHeight || birdPosition < 0) {
-                gameOver();
-            }
-            document.querySelectorAll('.pipe').forEach(pipe => {
-                let pipeLeft = parseFloat(pipe.style.left);
-                pipe.style.left = `${pipeLeft - gameSpeed}px`;
-                if (pipeLeft + pipe.clientWidth < 0) {
-                    pipe.remove();
-                }
-                const birdRect = bird.getBoundingClientRect();
-                const pipeRect = pipe.getBoundingClientRect();
-                const collision = (
-                    birdRect.left < pipeRect.right &&
-                    birdRect.right > pipeRect.left &&
-                    birdRect.top < pipeRect.bottom &&
-                    birdRect.bottom > pipeRect.top
-                );
-                if (collision) {
-                    gameOver();
-                }
-                if (pipe.classList.contains('bottom') && !pipe.passed && pipeRect.right < birdRect.left) {
-                    pipe.passed = true;
-                    gameScore++;
-                    scoreDisplay.textContent = gameScore;
-                    gameSpeed += 0.1;
-                }
+
+        function loadLists() {
+            const manhwas = getManhwaList();
+            const books = getBooksList();
+            const mvs = getMvList();
+
+            manhwaList.innerHTML = '';
+            booksList.innerHTML = '';
+            mvList.innerHTML = '';
+
+            manhwas.forEach((item, index) => {
+                manhwaList.appendChild(createListItem(item, 'manhwa', index));
+            });
+
+            books.forEach((item, index) => {
+                booksList.appendChild(createListItem(item, 'book', index));
+            });
+
+            mvs.forEach((item, index) => {
+                mvList.appendChild(createListItem(item, 'mv', index));
             });
         }
-        function birdJump(e) {
-            if (gameRunning && (e.code === 'Space' || (e.type === 'click' && e.target.closest('#flappy-container')))) {
-                birdGravity = -10;
-                bird.classList.add('flapping');
-                setTimeout(() => bird.classList.remove('flapping'), 100);
+
+        function getManhwaList() {
+            const stored = localStorage.getItem('manhwaList');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function getBooksList() {
+            const stored = localStorage.getItem('booksList');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function getMvList() {
+            const stored = localStorage.getItem('mvList');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function addManhwa() {
+            const title = document.getElementById('new-manhwa-title').value.trim();
+            const link = document.getElementById('new-manhwa-link').value.trim();
+            const image = document.getElementById('new-manhwa-image').value.trim();
+
+            if (!title) {
+                alert('Please enter a title!');
+                return;
+            }
+
+            const manhwas = getManhwaList();
+            manhwas.push({ title, link: link || null, image: image || null });
+            localStorage.setItem('manhwaList', JSON.stringify(manhwas));
+
+            document.getElementById('new-manhwa-title').value = '';
+            document.getElementById('new-manhwa-link').value = '';
+            document.getElementById('new-manhwa-image').value = '';
+
+            loadLists();
+        }
+
+        function addBook() {
+            const title = document.getElementById('new-book-title').value.trim();
+            const link = document.getElementById('new-book-link').value.trim();
+            const image = document.getElementById('new-book-image').value.trim();
+
+            if (!title) {
+                alert('Please enter a title!');
+                return;
+            }
+
+            const books = getBooksList();
+            books.push({ title, link: link || null, image: image || null });
+            localStorage.setItem('booksList', JSON.stringify(books));
+
+            document.getElementById('new-book-title').value = '';
+            document.getElementById('new-book-link').value = '';
+            document.getElementById('new-book-image').value = '';
+
+            loadLists();
+        }
+
+        function addMV() {
+            const title = document.getElementById('new-mv-title').value.trim();
+            const link = document.getElementById('new-mv-link').value.trim();
+            const image = document.getElementById('new-mv-image').value.trim();
+
+            if (!title) {
+                alert('Please enter a title!');
+                return;
+            }
+
+            const mvs = getMvList();
+            mvs.push({ title, link: link || null, image: image || null });
+            localStorage.setItem('mvList', JSON.stringify(mvs));
+
+            document.getElementById('new-mv-title').value = '';
+            document.getElementById('new-mv-link').value = '';
+            document.getElementById('new-mv-image').value = '';
+
+            loadLists();
+        }
+
+        function deleteListItem(type, index) {
+            const confirmDelete = confirm('Are you sure you want to delete this item?');
+            if (!confirmDelete) return;
+
+            let list, storageKey;
+
+            switch (type) {
+                case 'manhwa':
+                    list = getManhwaList();
+                    storageKey = 'manhwaList';
+                    break;
+                case 'book':
+                    list = getBooksList();
+                    storageKey = 'booksList';
+                    break;
+                case 'mv':
+                    list = getMvList();
+                    storageKey = 'mvList';
+                    break;
+            }
+
+            list.splice(index, 1);
+            localStorage.setItem(storageKey, JSON.stringify(list));
+            loadLists();
+        }
+
+        function uploadImage(type) {
+            const fileInput = document.getElementById(`${type}-image-upload`);
+            fileInput.click();
+        }
+
+        function handleImageUpload(input, type) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imageUrl = e.target.result;
+                document.getElementById(`new-${type}-image`).value = imageUrl;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function isValidURL(string) {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
             }
         }
-        function createPipe() {
-            if (!gameRunning) return;
-            const pipeWidth = 50;
-            const pipeGap = 120;
-            const minHeight = 30;
-            const containerHeight = flappyGameContainer.clientHeight;
-            const maxHeight = containerHeight - pipeGap - minHeight;
-            const topPipeHeight = Math.random() * (maxHeight - minHeight) + minHeight;
-            const bottomPipeHeight = containerHeight - topPipeHeight - pipeGap;
-            const pipeTop = document.createElement('div');
-            pipeTop.classList.add('pipe', 'top');
-            pipeTop.style.width = `${pipeWidth}px`;
-            pipeTop.style.height = `${topPipeHeight}px`;
-            pipeTop.style.left = `${flappyGameContainer.clientWidth}px`;
-            const pipeBottom = document.createElement('div');
-            pipeBottom.classList.add('pipe', 'bottom');
-            pipeBottom.style.width = `${pipeWidth}px`;
-            pipeBottom.style.height = `${bottomPipeHeight}px`;
-            pipeBottom.style.left = `${flappyGameContainer.clientWidth}px`;
-            flappyGameContainer.appendChild(pipeTop);
-            flappyGameContainer.appendChild(pipeBottom);
-        }
-        function gameOver() {
-            stopGame();
-            alert(`Game Over! Your score: ${gameScore}`);
-        }
-        function triggerConfetti() {
-            const colors = ['#ff0000', '#0000ff', '#00ff00', '#ffff00', '#ffc0cb', '#800080', '#ffa500'];
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.left = `${Math.random() * 100}vw`;
-                confetti.style.top = `${Math.random() * -10}vh`;
-                confetti.style.transform = `rotateZ(${Math.random() * 360}deg)`;
-                confetti.style.animationDuration = `${1.5 + Math.random() * 2}s`;
-                confetti.style.animationDelay = `${Math.random() * 0.5}s`;
-                document.body.appendChild(confetti);
-                confetti.addEventListener('animationend', () => {
-                    confetti.remove();
-                });
-            }
-        }
-        function printEntry() {
-            window.print();
-        }
+
         document.addEventListener('DOMContentLoaded', () => {
             loadData();
             setTheme(currentTheme);
@@ -3043,68 +3126,7 @@
             hideElement(newDiaryGroup);
             hideElement(renameInputGroup);
             document.getElementById('font-selector').addEventListener('change', setFont);
-            startGameBtn.addEventListener('click', startGame);
-            flappyGameContainer.addEventListener('click', birdJump);
-            document.addEventListener('keydown', (e) => {
-                if (e.code === 'Space' && gameRunning) {
-                    e.preventDefault();
-                    birdJump(e);
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (!musicPlayer.classList.contains('open')) return;
-                if (['Space', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'KeyM', 'KeyL'].includes(e.code)) {
-                    e.preventDefault();
-                }
-
-                switch (e.code) {
-                    case 'Space':
-                        togglePlayPause();
-                        break;
-                    case 'ArrowRight':
-                        if (audioPlayer.duration) {
-                            audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 5);
-                        }
-                        break;
-                    case 'ArrowLeft':
-                        if (audioPlayer.duration) {
-                            audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 5);
-                        }
-                        break;
-                    case 'ArrowUp':
-                        volumeSlider.value = Math.min(1, parseFloat(volumeSlider.value) + 0.1);
-                        setVolume();
-                        break;
-                    case 'ArrowDown':
-                        volumeSlider.value = Math.max(0, parseFloat(volumeSlider.value) - 0.1);
-                        setVolume();
-                        break;
-                    case 'KeyM':
-                        toggleMute();
-                        break;
-                    case 'KeyL':
-                        toggleLoop();
-                        break;
-                }
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.ctrlKey && event.shiftKey && event.key === 'U') {
-                    event.preventDefault();
-                    triggerConfetti();
-                }
-                if (event.ctrlKey && event.shiftKey && event.key === 'B') {
-                    event.preventDefault();
-                    if (flappyBirdContainer.classList.contains('hidden')) {
-                        showElement(flappyBirdContainer);
-                        startGame();
-                    } else {
-                        hideElement(flappyBirdContainer);
-                        stopGame();
-                    }
-                }
-            });
+            loadLists();
         });
     </script>
 </body>
